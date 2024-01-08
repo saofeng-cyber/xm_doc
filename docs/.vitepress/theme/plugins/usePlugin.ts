@@ -1,6 +1,5 @@
 import type { App } from "vue";
 import { createPinia } from 'pinia';
-import nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
