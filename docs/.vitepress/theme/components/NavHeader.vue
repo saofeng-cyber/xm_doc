@@ -1,16 +1,15 @@
 <script setup lang="ts">
+import { defineClientComponent } from 'vitepress'
 import Menu from './Menu.vue'
-import SwitckDark from './common/SwitckDark.vue';
 import { useData } from 'vitepress'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { ref } from 'vue';
 const { theme } = useData();
 const { nav, socialLinks } = theme.value;
 const mobileMenuOpen = ref(false);
-
-const changeMode = (value: boolean) => {
-  console.log(value ? 'light' : 'dark');
-}
+const SwitckDark = defineClientComponent(() => {
+  return import('./common/SwitckDark.vue')
+})
 </script>
 <template>
   <header
@@ -48,7 +47,7 @@ const changeMode = (value: boolean) => {
         </ul>
       </div>
 
-      <SwitckDark @change="changeMode" />
+      <SwitckDark />
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-50" />

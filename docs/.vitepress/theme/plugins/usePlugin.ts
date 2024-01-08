@@ -12,11 +12,4 @@ const pinia = createPinia();
 export const usePlugins = (app: App, router: Router) => {
     app.use(pinia)
     app.component('font-awesome-icon', FontAwesomeIcon)
-    router.onBeforeRouteChange = (to: string) => {
-        nprogress.configure({ showSpinner: false });
-        nprogress.start();
-    }
-    router.onAfterRouteChanged = (to: string) => {
-        nprogress.done();
-    }
 }

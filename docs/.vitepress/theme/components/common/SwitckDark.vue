@@ -6,13 +6,9 @@ const useSwitchDark = switchDark()
 const ballRef = ref<HTMLElement | null>(null)
 const themeMode = ref(Boolean(useSwitchDark.theme === 'light'))
 
-const emits = defineEmits<{
-    (event: 'change', data: any)
-}>()
 const changeDarkMode = (data: any) => {
     const { checked } = data.target
     useSwitchDark.setTheme(checked)
-    emits('change', checked)
 }
 
 

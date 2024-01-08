@@ -1,11 +1,16 @@
 <script setup lang="ts">
+import { defineClientComponent } from 'vitepress'
 import { useData } from 'vitepress'
 import NotFoundVue from './NotFound.vue';
-import BackUp from './common/BackUp.vue';
-import Outline from './common/Outline.vue';
 import UserInfo from './UserInfo.vue';
 const { page } = useData()
+const Outline = defineClientComponent(() => {
+    return import('./common/Outline.vue')
+})
 
+const BackUp = defineClientComponent(() => {
+    return import('./common/BackUp.vue')
+})
 </script>
 <template>
     <div class="relative pt-32 pb-16 bg-white dark:bg-gray-900 duration-300 ease-in-out dark:text-white">

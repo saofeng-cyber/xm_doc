@@ -13,8 +13,17 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    // ...
+  async enhanceApp({ app, router, siteData }) {
+    if (!import.meta.env.SSR) {
+      const nprogress = await import("nprogress")
+      router.onBeforeRouteChange = (to: string) => {
+        nprogress.configure({ showSpinner: false });
+        nprogress.start();
+      }
+      router.onAfterRouteChanged = (to: string) => {
+        nprogress.done();
+      }
+    }
     usePlugins(app, router)
   },
 } satisfies Theme

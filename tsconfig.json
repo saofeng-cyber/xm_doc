@@ -12,7 +12,8 @@
     "verbatimModuleSyntax": true,
     "lib": ["esnext", "dom", "dom.iterable"],
     "allowJs": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["vite/client", "node"]
   },
   "include": ["docs/.vitepress/theme/*"]
 }

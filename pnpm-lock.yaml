@@ -52,6 +52,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.4.0
     version: registry.npmmirror.com/tailwindcss@3.4.1
+  vite:
+    specifier: 5.0.10
+    version: registry.npmmirror.com/vite@5.0.10(@types/node@20.10.7)(less@4.2.0)
   vitepress:
     specifier: 1.0.0-rc.35
     version: registry.npmmirror.com/vitepress@1.0.0-rc.35(@algolia/client-search@4.22.0)(@types/node@20.10.7)(less@4.2.0)(nprogress@0.2.0)(postcss@8.4.33)(search-insights@2.13.0)
@@ -923,7 +926,7 @@ packages:
     version: 0.0.20
     dev: true
 
-  registry.npmmirror.com/@vitejs/plugin-vue@5.0.2(vite@5.0.11)(vue@3.4.5):
+  registry.npmmirror.com/@vitejs/plugin-vue@5.0.2(vite@5.0.10)(vue@3.4.5):
     resolution: {integrity: sha512-kEjJHrLb5ePBvjD0SPZwJlw1QTRcjjCA9sB5VyfonoXVBxTS7TMnqL6EkLt1Eu61RDeiuZ/WN9Hf6PxXhPI2uA==, tarball: https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-5.0.2.tgz}
     id: registry.npmmirror.com/@vitejs/plugin-vue/5.0.2
     name: '@vitejs/plugin-vue'
@@ -933,7 +936,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmmirror.com/vite@5.0.11(@types/node@20.10.7)(less@4.2.0)
+      vite: registry.npmmirror.com/vite@5.0.10(@types/node@20.10.7)(less@4.2.0)
       vue: registry.npmmirror.com/vue@3.4.5
     dev: true
 
@@ -2389,11 +2392,11 @@ packages:
     version: 1.0.2
     dev: true
 
-  registry.npmmirror.com/vite@5.0.11(@types/node@20.10.7)(less@4.2.0):
-    resolution: {integrity: sha512-XBMnDjZcNAw/G1gEiskiM1v6yzM4GE5aMGvhWTlHAYYhxb7S3/V1s3m2LDHa8Vh6yIWYYB0iJwsEaS523c4oYA==, tarball: https://registry.npmmirror.com/vite/-/vite-5.0.11.tgz}
-    id: registry.npmmirror.com/vite/5.0.11
+  registry.npmmirror.com/vite@5.0.10(@types/node@20.10.7)(less@4.2.0):
+    resolution: {integrity: sha512-2P8J7WWgmc355HUMlFrwofacvr98DAjoE52BfdbwQtyLH06XKwaL/FMnmKM2crF0iX4MpmMKoDlNCB1ok7zHCw==, tarball: https://registry.npmmirror.com/vite/-/vite-5.0.10.tgz}
+    id: registry.npmmirror.com/vite/5.0.10
     name: vite
-    version: 5.0.11
+    version: 5.0.10
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -2447,7 +2450,7 @@ packages:
       '@docsearch/css': registry.npmmirror.com/@docsearch/css@3.5.2
       '@docsearch/js': registry.npmmirror.com/@docsearch/js@3.5.2(@algolia/client-search@4.22.0)(search-insights@2.13.0)
       '@types/markdown-it': registry.npmmirror.com/@types/markdown-it@13.0.7
-      '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue@5.0.2(vite@5.0.11)(vue@3.4.5)
+      '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue@5.0.2(vite@5.0.10)(vue@3.4.5)
       '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api@6.5.1
       '@vueuse/core': registry.npmmirror.com/@vueuse/core@10.7.1(vue@3.4.5)
       '@vueuse/integrations': registry.npmmirror.com/@vueuse/integrations@10.7.1(focus-trap@7.5.4)(nprogress@0.2.0)(vue@3.4.5)
@@ -2458,7 +2461,7 @@ packages:
       shikiji: registry.npmmirror.com/shikiji@0.9.17
       shikiji-core: registry.npmmirror.com/shikiji-core@0.9.17
       shikiji-transformers: registry.npmmirror.com/shikiji-transformers@0.9.17
-      vite: registry.npmmirror.com/vite@5.0.11(@types/node@20.10.7)(less@4.2.0)
+      vite: registry.npmmirror.com/vite@5.0.10(@types/node@20.10.7)(less@4.2.0)
       vue: registry.npmmirror.com/vue@3.4.5
     transitivePeerDependencies:
       - '@algolia/client-search'
