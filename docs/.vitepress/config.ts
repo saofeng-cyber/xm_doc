@@ -39,6 +39,14 @@ export default defineConfig({
         ]
       }
     ],
+    externalLinkIcon: true,
+    notFound: {
+      title: '您来到了一片荒芜之地',
+      quote: '—— 谁料在这片荒芜之地，有如此多的人, 如此多的故事',
+      linkLabel: '返回首页',
+      linkText: '返回首页',
+      code: '404',
+    },
 
     socialLinks: [
       {
@@ -59,13 +67,24 @@ export default defineConfig({
     ],
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024-present 洵默の小窝'
-    }
+      copyright: 'Copyright © 2024-present <a href="#">洵默の小窝</a>'
+    },
+    editLink: {
+      pattern: 'https://github.com/vsaofeng-cyber/xm_doc/edit/main/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
+  },
+  router: {
+    prefetchLinks: true
   },
   markdown: {
     theme: 'github-dark',
   },
   lastUpdated: true,
+  transformHtml: (code, id, ctx) => {
+    console.log(code);
+
+  },
   vite: {
     server: {
       host: true,

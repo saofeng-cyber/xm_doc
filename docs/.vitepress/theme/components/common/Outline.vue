@@ -2,15 +2,11 @@
 import OutlineItem from './OutlineItem.vue';
 import { shallowRef } from 'vue';
 import { getHeaders, resolveTitle } from '../../utils/outline';
-import { useData, onContentUpdated } from 'vitepress';
+import { useData } from 'vitepress';
 const { frontmatter, theme } = useData()
 const headers = shallowRef<any>([])
-onContentUpdated(() => {
-    headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
-})
-
 const levelTitle = shallowRef(resolveTitle(theme.value))
-
+headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
 
 </script>
 

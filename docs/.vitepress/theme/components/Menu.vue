@@ -11,13 +11,11 @@ defineProps<{
 </script>
 <template>
     <Menu as="div" class="relative inline-block text-left">
-        <div>
-            <MenuButton
-                class="inline-flex w-full justify-center items-center gap-x-1.5 px-3 font-semibold text-gray-900 dark:text-white hover:text-gray-500">
-                {{ text }}
-                <font-awesome-icon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" :icon="['fas', 'caret-down']" />
-            </MenuButton>
-        </div>
+        <MenuButton
+            class="inline-flex w-full justify-center items-center gap-x-1.5 px-3 text-gray-900 dark:text-white hover:text-gray-500">
+            {{ text }}
+            <font-awesome-icon class="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" :icon="['fas', 'caret-down']" />
+        </MenuButton>
 
         <transition enter-active-class="transition ease-out duration-200" enter-from-class="transform opacity-0 scale-95"
             enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75"

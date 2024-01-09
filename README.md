@@ -37,6 +37,12 @@ Takes two numbers and returns the sum.
 
 - [@octokatherine](https://www.github.com/octokatherine)
 
+   project: docs/.vitepress/dist
+         domain: jumpy-action.surge.sh
+         upload: [====================] 100% eta: 0.0s (42 files, 6725744 bytes)
+            CDN: [====================] 100%
+     encryption: *.surge.sh, surge.sh (131 days)
+             IP: 138.197.235.123
 
 ## Demo
 

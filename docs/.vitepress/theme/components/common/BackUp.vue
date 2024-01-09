@@ -24,7 +24,7 @@ onMounted(() => {
 })
 </script>
 <template>
-    <div ref="topRef" class="fixed right-12 bottom-14 text-slate-800 hidden">
+    <div ref="topRef" class="fixed right-12 bottom-14 text-slate-800 hidden z-[999]">
         <button
             class="w-12 h-12 flex justify-center items-center bg-slate-800 rounded-full hover:bg-slate-600 text-white dark:text-white dark:border-0 duration-300 ease-in-out"
             @click="returnTop">

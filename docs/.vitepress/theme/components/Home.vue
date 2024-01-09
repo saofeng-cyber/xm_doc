@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
-import { onMounted, ref } from 'vue';
+import { useData, withBase, onContentUpdated } from 'vitepress'
+import { ref } from 'vue';
 const { frontmatter } = useData();
 const { hero, features } = frontmatter.value;
 const name = ref(hero.name);
@@ -20,7 +20,7 @@ const whiteName = () => {
     readName();
 }
 
-onMounted(whiteName)
+onContentUpdated(whiteName)
 
 
 </script>
@@ -34,20 +34,21 @@ onMounted(whiteName)
                 </h1>
                 <p class="mt-12 text-lg leading-8 text-gray-600 dark:text-white">{{ hero.text }}</p>
                 <div class="mt-10 flex items-center justify-center gap-x-6 space-x-10 text-gray-900 dark:text-white">
-                    <a v-for="item in actions" :href="item.link"
+                    <a v-for="item in actions" :href="withBase(item.link)"
                         :class="[item.theme === 'brand' ? 'rounded-md text-white bg-gray-800 dark:bg-slate-600 px-6 py-3 text-md font-semibold shadow-md hover:bg-gray-600 duration-200' : 'text-lg font-bold  hover:text-gray-600']">
                         {{ item.text }}</a>
                 </div>
             </div>
             <div class="w-full relative py-20 lg:py-8 flex justify-center">
                 <div class="image-bg blur-[80px] w-full h-full md:w-3/5 lg:w-1/2"></div>
-                <img class="rounded-lg w-full md:w-3/5 lg:w-1/2" :src="hero.heroImage" alt="">
+                <img class="rounded-lg w-full md:w-3/5 lg:w-1/2" :src="withBase(hero.heroImage)" alt="">
             </div>
         </div>
         <!-- feature -->
         <div
             class="my-12 mx-auto flex justify-center items-start flex-col lg:flex-row space-y-6 lg:space-y-0 space-x-0 lg:space-x-6">
-            <div v-for="item in features" :key="item.title" class="w-full rounded-xl shadow-lg dark:shadow-slate-950 dark:bg-slate-900 px-4">
+            <div v-for="item in features" :key="item.title"
+                class="w-full rounded-xl shadow-lg dark:shadow-slate-950 dark:bg-slate-900 px-4">
                 <div class="uppercase pt-8 text-lg font-semibold space-x-4 dark:text-white">
                     <font-awesome-icon size="3x" :icon="item.icon" />
                     <span>{{ item.title }}</span>

@@ -12,8 +12,8 @@ hero:
       link: /xm_doc/
     - theme: alt
       text: 学习更多
-      link: /xm_doc/web/
-  heroImage: /xm_doc/hero.svg
+      link: /web
+  heroImage: /hero.svg
 
 features:
   - title: 前端
