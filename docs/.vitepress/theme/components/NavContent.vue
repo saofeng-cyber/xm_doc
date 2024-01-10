@@ -2,7 +2,7 @@
 import NavSearch from './NavSearch.vue';
 import NavBarMenu from './NavBarMenu.vue';
 import NavBarSocialLinks from './NavBarSocialLinks.vue';
-import { defineClientComponent, useData } from 'vitepress';
+import { defineClientComponent } from 'vitepress';
 const SwitckDark = defineClientComponent(() => {
   return import('./common/SwitckDark.vue')
 })

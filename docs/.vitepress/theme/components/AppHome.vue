@@ -26,7 +26,7 @@ onContentUpdated(whiteName)
 </script>
 <template>
     <div class="relative h-full px-4 pt-24 pb-10 bg-white dark:bg-gray-900 duration-300 ease-in-out">
-
+        <slot name="home-hero-before" />
         <!-- hero -->
         <div class="container mx-auto flex items-center flex-col lg:flex-row space-x-4">
             <div class="text-center">
@@ -44,7 +44,9 @@ onContentUpdated(whiteName)
                 <img class="rounded-lg w-full md:w-3/5 lg:w-1/2" :src="withBase(hero.heroImage)" alt="">
             </div>
         </div>
+        <slot name="home-hero-after" />
         <!-- feature -->
+        <slot name="home-features-before" />
         <div
             class="my-12 mx-auto flex justify-center items-start flex-col lg:flex-row space-y-6 lg:space-y-0 space-x-0 lg:space-x-6">
             <div v-for="item in features" :key="item.title"
@@ -62,6 +64,7 @@ onContentUpdated(whiteName)
                 <p class="pt-12 pb-10 font-semibold dark:text-white">{{ item.details }}</p>
             </div>
         </div>
+        <slot name="home-features-after" />
     </div>
 </template>
 <style lang="less" scoped>

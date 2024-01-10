@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { defineClientComponent } from 'vitepress'
 import NavTitle from './NavTitle.vue'
 import NavContent from './NavContent.vue'
 import { useData } from 'vitepress'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { computed, ref } from 'vue';
 const { theme, frontmatter } = useData();
-const { nav, socialLinks } = theme.value;
+const { nav } = theme.value;
 const mobileMenuOpen = ref(false);
 
 const hasNavbar = computed(() => {
@@ -28,8 +27,12 @@ const hasNavbar = computed(() => {
         </template>
       </NavTitle>
       <NavContent>
-        <slot name="nav-bar-content-before" />
-        <slot name="nav-bar-content-after" />
+        <template #nav-bar-content-before>
+          <slot name="nav-bar-content-before" />
+        </template>
+        <template #nav-bar-content-after>
+          <slot name="nav-bar-content-after" />
+        </template>
       </NavContent>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">

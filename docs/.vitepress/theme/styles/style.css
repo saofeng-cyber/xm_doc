@@ -6,6 +6,9 @@
   .btn_mode {
     @apply w-8 h-8 flex items-center justify-center rounded-full text-gray-900 dark:text-white duration-500 ease-in-out;
   }
+  .NavLink.active {
+    @apply text-indigo-500 dark:text-indigo-400 duration-300 ease-in-out;
+  }
 }
 
 .header-anchor {
@@ -45,4 +48,8 @@
 .tdoc h6:hover .header-anchor,
 .tdoc h6 .header-anchor:focus {
   opacity: 1;
+}
+
+.has-sidebar {
+  display: none;
 }

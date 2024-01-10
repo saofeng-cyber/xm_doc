@@ -12,7 +12,7 @@ hero:
       link: /xm_doc/
     - theme: alt
       text: 学习更多
-      link: /web
+      link: /web/
   heroImage: /hero.svg
 
 features:

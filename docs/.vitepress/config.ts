@@ -12,17 +12,17 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     logo: '/xm_doc/header.jpg',
     nav: [
-      { text: '首页', link: '/xm_doc/' },
+      { text: '首页', link: '/' },
       {
         text: '前端',
         items: [
-          { text: '前端技术路线', link: '/xm_doc/web/' },
-          { text: 'javascript', link: '/xm_doc/web/javascript' }
+          { text: '前端技术路线', link: '/web/' },
+          { text: 'javascript', link: '/web/javascript' }
         ]
       },
-      { text: '示例', link: '/xm_doc/guide/markdown-examples' },
-      { text: 'Api示例', link: '/xm_doc/guide/api-examples' },
-      { text: '个人简介', link: '/xm_doc/guide/my-self' },
+      { text: '示例', link: '/guide/markdown-examples' },
+      { text: 'Api示例', link: '/guide/api-examples' },
+      { text: '个人简介', link: '/guide/my-self' },
     ],
 
     outline: {
@@ -79,6 +79,9 @@ export default defineConfig({
   },
   markdown: {
     theme: 'github-dark',
+    config(md) {
+      // md.use()
+    }
   },
   lastUpdated: true,
   transformHtml: (code, id, ctx) => {
