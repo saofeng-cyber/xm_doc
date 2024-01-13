@@ -9,6 +9,14 @@ html:is(.dark) {
   --tdoc-bg-color: rgba(17, 24, 39, 0.82);
   --tdoc-text-color: #fff;
 }
+html:is(.gray-scale) {
+  filter: grayscale(0.95);
+  -webkit-filter: grayscale(0.95);
+}
+html:is(.invert) {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
 html {
   font-family: "Quicksand", sans-serif !important;
   font-size: 16px;

@@ -140,8 +140,14 @@
 .tdoc a {
   position: relative;
   color: #39c5bb;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
-.tdoc p a::after {
-  content: "🚀";
-  font-size: 1.2em;
+.tdoc blockquote {
+  @apply p-4 mr-5 my-8 rounded-md;
+  border-left: 5px solid #39c5bb;
+  background: #eef7fa;
+}
+.tdoc blockquote p {
+  @apply pb-0;
 }

@@ -9,7 +9,7 @@ defineProps<{
 <template>
     <ul :class="[root ? '' : 'pl-4']">
         <li class="break-words whitespace-nowrap" v-for="{ children, link, title } in headers">
-            <a class="text-sm font-semibold leading-8 hover:text-slate-400 duration-300"
+            <a class="text-base font-normal leading-8 hover:text-[#39c5bb] duration-300"
                 :href="link">
                 {{ title }}
             </a>

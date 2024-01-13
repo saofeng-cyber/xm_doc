@@ -9,10 +9,10 @@ const BackUp = defineClientComponent(() => {
     return import('./common/BackUp.vue')
 })
 
-onContentUpdated(() => {
-    import('./dataJs/post.data').then(data => {
-    })
-})
+// onContentUpdated(() => {
+//     import('./dataJs/post.data').then(data => {
+//     })
+// })
 
 </script>
 <template>
