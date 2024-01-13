@@ -1,13 +1,13 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
-import Layout from './layout/Layout.vue'
-import AppContent from './components/AppContent.vue';
-import NavHeader from './components/NavHeader.vue';
-import AppFooter from './components/AppFooter.vue';
+import Layout from '../theme/sf-theme/layout/Layout.vue'
+import AppContent from '../theme/sf-theme/components/AppContent.vue';
+import NavHeader from '../theme/sf-theme/components/NavHeader.vue';
+import AppFooter from '../theme/sf-theme/components/AppFooter.vue';
 
-import './styles/style.css';
-import './styles/common.css';
+import '../theme/sf-theme/styles/style.css';
+import '../theme/sf-theme/styles/common.css';
 
 import { usePlugins } from './plugins/usePlugin'
 export default {

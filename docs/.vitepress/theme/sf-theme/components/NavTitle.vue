@@ -11,7 +11,9 @@ const { theme, site } = useData();
             <slot name="nav-bar-title-before" />
             <img class="h-12 w-12 rounded-full mr-3" :src="theme.logo" alt="" />
             <template v-if="theme.siteTitle">{{ theme.siteTitle }}</template>
-            <template v-else-if="theme.siteTitle === undefined">{{ site.title }}</template>
+            <template v-else-if="theme.siteTitle === undefined">
+            <span class="text-xl font-semibold">{{ site.title }}</span>
+            </template>
             <slot name="nav-bar-title-after" />
         </a>
     </div>

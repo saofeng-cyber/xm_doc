@@ -16,7 +16,7 @@ onContentUpdated(()=>{
 <template>
     <div v-if="headers.length" class="user_bg rounded-3xl p-6 sticky top-20">
         <div class="">
-            <div class="text-sm left-8 leading-8 border-b pb-2 font-semibold flex items-center">
+            <div class="text-sm left-8 leading-8 border-b border-slate-800 pb-2 font-semibold flex items-center">
                 <font-awesome-icon size="lg" :icon="['fas', 'list']" />
                 <span class="pl-2 text-lg">{{ levelTitle }}</span>
             </div>
