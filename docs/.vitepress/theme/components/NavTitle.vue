@@ -6,7 +6,7 @@ const { theme, site } = useData();
 </script>
 
 <template>
-    <div class="dark:text-white duration-300">
+    <div class="duration-300">
         <a href="/xm_doc/" class="flex items-center">
             <slot name="nav-bar-title-before" />
             <img class="h-12 w-12 rounded-full mr-3" :src="theme.logo" alt="" />

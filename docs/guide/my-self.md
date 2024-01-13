@@ -1,8 +1,11 @@
 ---
 layout: page
 title: 你好，我是洵默
-img: /self3.jpg
 ---
+
+::: warning
+*here be dragons*
+:::
 
 ## 🎨 主题
 

@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress'
-
+import markdownItContainer from "markdown-it-container"
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "洵默の小窝",
-  description: "时间才是最好的解药",
+  title: "洵默の小窝 🥝",
+  description: "Hope you have a good day 🎉🎉🎉",
   base: '/xm_doc/',
   head: [
     ['link', { rel: 'icon', href: '/xm_doc/vue-nes.svg' }]
@@ -80,7 +80,7 @@ export default defineConfig({
   markdown: {
     theme: 'github-dark',
     config(md) {
-      // md.use()
+      md.use(markdownItContainer)
     }
   },
   lastUpdated: true,

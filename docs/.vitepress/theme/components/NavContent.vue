@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavSearch from './NavSearch.vue';
+// import NavSearch from './NavSearch.vue';
 import NavBarMenu from './NavBarMenu.vue';
 import NavBarSocialLinks from './NavBarSocialLinks.vue';
 import { defineClientComponent } from 'vitepress';
@@ -10,7 +10,7 @@ const SwitckDark = defineClientComponent(() => {
 <template>
     <div class="hidden md:flex flex-1 justify-center items-center px-4">
         <slot name="nav-bar-content-before" />
-        <NavSearch />
+        <!-- <NavSearch /> -->
         <NavBarMenu />
         <NavBarSocialLinks />
         <SwitckDark />

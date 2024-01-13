@@ -21,8 +21,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="frontmatter.layout" class="layout relative min-h-screen flex flex-col bg-white dark:bg-gray-900"
-    :class="frontmatter.pageClass">
+  <div id="web_bg"></div>
+  <div v-if="frontmatter.layout" class="layout relative min-h-screen flex flex-col" :class="frontmatter.pageClass">
     <nav-header>
       <template #nav-bar-title-before>
         <slot name="nav-bar-title-before" />
@@ -65,3 +65,29 @@ onMounted(() => {
   </div>
   <Content v-else />
 </template>
+<style lang="less" scoped>
+#web_bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  // background: url("	https://api.yimian.xyz/img?type=moe&size=1920x1080");
+  // background: url("https://cdn.seovx.com/?mom=302");
+  background: url("https://bing.img.run/rand.php");
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: blurImg 1s 1 ease-in;
+
+  @keyframes blurImg {
+    0% {
+      filter: blur(0px);
+    }
+
+    100% {
+      filter: blur(5px);
+    }
+
+  }
+}
+</style>

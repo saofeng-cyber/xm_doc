@@ -25,23 +25,19 @@ onContentUpdated(whiteName)
 
 </script>
 <template>
-    <div class="relative h-full px-4 pt-24 pb-10 bg-white dark:bg-gray-900 duration-300 ease-in-out">
+    <div class="relative h-full px-4 pb-10 duration-300 ease-in-out text-white">
         <slot name="home-hero-before" />
         <!-- hero -->
-        <div class="container mx-auto flex items-center flex-col lg:flex-row space-x-4">
+        <div class="container mx-auto flex items-center justify-center flex-col lg:flex-row space-x-4">
             <div class="text-center">
-                <h1 class="heroName text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">{{ name }}
+                <h1 class="heroName text-4xl font-bold tracking-tigh sm:text-5xl">{{ name }}
                 </h1>
-                <p class="mt-12 text-lg leading-8 text-gray-600 dark:text-white">{{ hero.text }}</p>
-                <div class="mt-10 flex items-center justify-center gap-x-6 space-x-10 text-gray-900 dark:text-white">
+                <p class="mt-12 text-lg leading-8">{{ hero.text }}</p>
+                <div class="mt-10 flex items-center justify-center gap-x-6 space-x-1">
                     <a v-for="item in actions" :href="withBase(item.link)"
-                        :class="[item.theme === 'brand' ? 'rounded-md text-white bg-gray-800 dark:bg-slate-600 px-6 py-3 text-md font-semibold shadow-md hover:bg-gray-600 duration-200' : 'text-lg font-bold  hover:text-gray-600']">
+                        :class="[item.theme === 'brand' ? 'rounded-md bg-gray-800 px-6 py-3 text-md font-semibold shadow-md duration-200' : 'text-lg font-bold  hover:text-gray-600']">
                         {{ item.text }}</a>
                 </div>
-            </div>
-            <div class="w-full relative py-20 lg:py-8 flex justify-center">
-                <div class="image-bg blur-[80px] w-full h-full md:w-3/5 lg:w-1/2"></div>
-                <img class="rounded-lg w-full md:w-3/5 lg:w-1/2" :src="withBase(hero.heroImage)" alt="">
             </div>
         </div>
         <slot name="home-hero-after" />

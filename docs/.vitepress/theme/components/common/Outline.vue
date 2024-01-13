@@ -2,20 +2,28 @@
 import OutlineItem from './OutlineItem.vue';
 import { shallowRef } from 'vue';
 import { getHeaders, resolveTitle } from '../../utils/outline';
-import { useData } from 'vitepress';
+import { onContentUpdated, useData } from 'vitepress';
 const { frontmatter, theme } = useData()
 const headers = shallowRef<any>([])
 const levelTitle = shallowRef(resolveTitle(theme.value))
 headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
+onContentUpdated(()=>{
+    headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
+})
 
 </script>
 
 <template>
-    <div v-if="headers.length" class="sticky top-20">
-        <div class="border-l pl-6">
-            <div class="text-sm text-slate-700 dark:text-white left-8 leading-8 border-b font-semibold">{{ levelTitle }}
+    <div v-if="headers.length" class="user_bg rounded-3xl p-6 sticky top-20">
+        <div class="">
+            <div class="text-sm left-8 leading-8 border-b font-semibold">{{ levelTitle }}
             </div>
             <OutlineItem :root="true" :headers="headers" />
         </div>
     </div>
 </template>
+<style lang="less" scoped>
+.user_bg {
+    background-color: rgba(255, 255, 255, 0.88);
+}
+</style>
