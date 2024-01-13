@@ -70,7 +70,7 @@ export default defineConfig({
       }
     }
   },
-  cleanUrls: true,
+  cleanUrls: false,
   markdown: {
     theme: 'github-dark',
     lineNumbers: true,
