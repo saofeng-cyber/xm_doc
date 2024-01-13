@@ -1,52 +1,5 @@
+@import "./markdown.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .btn_mode {
-    @apply w-8 h-8 flex items-center justify-center rounded-full text-gray-900 dark:text-white duration-500 ease-in-out;
-  }
-}
-
-.header-anchor {
-  position: absolute;
-  top: -0.16em;
-  left: 0;
-  margin-left: -1.48em;
-  font-weight: 500;
-  user-select: none;
-  opacity: 0;
-  text-decoration: none;
-  transition: color 0.25s, opacity 0.25s;
-}
-.header-anchor::before {
-  content: "🐅";
-}
-.tdoc h1,
-.tdoc h2,
-.tdoc h3,
-.tdoc h4,
-.tdoc h5,
-.tdoc h6 {
-  position: relative;
-  font-weight: 600;
-  outline: none;
-}
-.tdoc h1:hover .header-anchor,
-.tdoc h1 .header-anchor:focus,
-.tdoc h2:hover .header-anchor,
-.tdoc h2 .header-anchor:focus,
-.tdoc h3:hover .header-anchor,
-.tdoc h3 .header-anchor:focus,
-.tdoc h4:hover .header-anchor,
-.tdoc h4 .header-anchor:focus,
-.tdoc h5:hover .header-anchor,
-.tdoc h5 .header-anchor:focus,
-.tdoc h6:hover .header-anchor,
-.tdoc h6 .header-anchor:focus {
-  opacity: 1;
-}
-
-.has-sidebar {
-  display: none;
-}

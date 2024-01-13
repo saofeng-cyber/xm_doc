@@ -25,7 +25,7 @@ onContentUpdated(whiteName)
 
 </script>
 <template>
-    <div class="relative h-full px-4 pb-10 duration-300 ease-in-out text-white">
+    <div id="app_home" class="relative h-full px-4 pb-10 duration-300 ease-in-out text-white">
         <slot name="home-hero-before" />
         <!-- hero -->
         <div class="container mx-auto flex items-center justify-center flex-col lg:flex-row space-x-4">
@@ -42,7 +42,7 @@ onContentUpdated(whiteName)
         </div>
         <slot name="home-hero-after" />
         <!-- feature -->
-        <slot name="home-features-before" />
+        <!-- <slot name="home-features-before" />
         <div
             class="my-12 mx-auto flex justify-center items-start flex-col lg:flex-row space-y-6 lg:space-y-0 space-x-0 lg:space-x-6">
             <div v-for="item in features" :key="item.title"
@@ -60,7 +60,7 @@ onContentUpdated(whiteName)
                 <p class="pt-12 pb-10 font-semibold dark:text-white">{{ item.details }}</p>
             </div>
         </div>
-        <slot name="home-features-after" />
+        <slot name="home-features-after" /> -->
     </div>
 </template>
 <style lang="less" scoped>

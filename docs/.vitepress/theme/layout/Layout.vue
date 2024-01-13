@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import AppContent from '../components/AppContent.vue';
-import NavHeader from '../components/NavHeader.vue';
-import AppFooter from '../components/AppFooter.vue';
 import { useData } from 'vitepress'
 import { onMounted } from 'vue';
 import '../utils/autoload'
@@ -78,6 +75,15 @@ onMounted(() => {
   background-size: cover;
   background-repeat: no-repeat;
   animation: blurImg 1s 1 ease-in;
+  // &::before{
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   backdrop-filter: blur(1px);
+  // }
 
   @keyframes blurImg {
     0% {

@@ -18,26 +18,28 @@ onContentUpdated(() => {
 <template>
     <div class="pt-16">
         <div class="container mx-auto px-4 xl:px-0 transition-all duration-500 ease-in-out">
-            <div class="tdoc relative flex justify-center">
-                <article
-                    class="prose prose-img:rounded-xl flex-grow prose-invert order-1 md:prose-base xl:prose-lg px-6">
+            <div class="relative flex justify-center">
+                <!-- <article
+                    class="prose prose-img:rounded-xl flex-grow prose-invert order-1 md:prose-base xl:prose-lg px-6"> -->
+                <article class="tdoc">
                     <Content />
                 </article>
-                <div class="relative flex-shrink-0 order-2 hidden lg:flex flex-col min-w-[360px] pl-8">
+                <!-- </article> -->
+                <div class="relative text-slate-800 flex-shrink-0 order-2 hidden xl:flex flex-col min-w-[360px] pl-8">
                     <UserInfo />
                     <Outline />
                 </div>
                 <BackUp />
             </div>
         </div>
-        <div class="bg_img fixed left-0 top-0 w-full h-full pointer-events-none"></div>
+        <!-- <div class="bg_img fixed left-0 top-0 w-full h-full pointer-events-none"></div> -->
     </div>
 </template>
-<style scoped>
+<!-- <style scoped>
 .bg_img {
     background-image: url('/xm_doc/bg.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
-</style>
+</style> -->

@@ -2,6 +2,9 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import Layout from './layout/Layout.vue'
+import AppContent from './components/AppContent.vue';
+import NavHeader from './components/NavHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 import './styles/style.css';
 import './styles/common.css';
@@ -14,6 +17,9 @@ export default {
     })
   },
   async enhanceApp({ app, router, siteData }) {
+    app.component('AppContent', AppContent)
+    app.component('NavHeader', NavHeader)
+    app.component('AppFooter', AppFooter)
     if (!import.meta.env.SSR) {
       const nprogress = await import("nprogress")
       router.onBeforeRouteChange = (to: string) => {

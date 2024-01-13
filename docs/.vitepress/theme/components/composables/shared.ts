@@ -58,3 +58,13 @@ export function normalizeLink(url: string) {
         : url.replace(/(?:(^\.+)\/)?.*$/, `$1${pathname.replace(/(\.md)?$/, site.value.cleanUrls ? '' : '.html')}${search}${hash}`);
     return withBase(normalizedPath);
 }
+
+export const fomatTime = (time: string) => {
+    const date = new Date(time);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    return `${year}-${month}-${day} ${hour}:${minute}`;
+}

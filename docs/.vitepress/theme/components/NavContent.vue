@@ -13,7 +13,7 @@ const SwitckDark = defineClientComponent(() => {
         <!-- <NavSearch /> -->
         <NavBarMenu />
         <NavBarSocialLinks />
-        <SwitckDark />
+        <!-- <SwitckDark /> -->
         <slot name="nav-bar-content-after" />
     </div>
 </template>

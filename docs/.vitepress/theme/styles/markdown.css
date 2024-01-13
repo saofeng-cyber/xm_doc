@@ -1,0 +1,109 @@
+.tdoc .header-anchor {
+  position: absolute;
+  top: -0.16em;
+  left: 0;
+  margin-left: -1.48em;
+  font-weight: 500;
+  user-select: none;
+  opacity: 0;
+  text-decoration: none;
+  transition: color 0.25s, opacity 0.25s;
+}
+.header-anchor::before {
+  content: "🐅";
+}
+.tdoc h1,
+.tdoc h2,
+.tdoc h3,
+.tdoc h4,
+.tdoc h5,
+.tdoc h6 {
+  position: relative;
+  font-weight: 700;
+  outline: none;
+  margin: 20px 0 14px;
+}
+.tdoc h1:hover .header-anchor,
+.tdoc h1 .header-anchor:focus,
+.tdoc h2:hover .header-anchor,
+.tdoc h2 .header-anchor:focus,
+.tdoc h3:hover .header-anchor,
+.tdoc h3 .header-anchor:focus,
+.tdoc h4:hover .header-anchor,
+.tdoc h4 .header-anchor:focus,
+.tdoc h5:hover .header-anchor,
+.tdoc h5 .header-anchor:focus,
+.tdoc h6:hover .header-anchor,
+.tdoc h6 .header-anchor:focus {
+  opacity: 1;
+}
+
+.has-sidebar {
+  display: none;
+}
+.tdoc {
+  @apply container rounded-3xl py-10 px-16 mb-8 dark:bg-gray-900;
+  background-color: rgba(255, 255, 255, 0.82);
+}
+.tdoc h1 {
+  @apply text-3xl;
+}
+.tdoc h2 {
+  @apply text-2xl;
+}
+.tdoc h3 {
+  @apply text-xl;
+}
+.tdoc h4 {
+  @apply text-lg;
+}
+.tdoc h5 {
+  @apply text-base;
+}
+.tdoc h6 {
+  @apply text-sm;
+}
+
+.tdoc p {
+  @apply pb-4;
+}
+.tdoc ul {
+  @apply py-6 text-lg list-disc;
+}
+
+.tdoc ul li::marker {
+  color: #39c5bb !important;
+}
+
+.tdoc li {
+  @apply leading-10 ml-10;
+}
+
+.tdoc ol {
+  @apply py-6 text-lg;
+  list-style: circle;
+}
+
+.tdoc div [class*="language-"] {
+  @apply relative bg-slate-800 rounded-md py-4 px-8 my-4;
+}
+
+.tdoc div [class*="language-"] span.lang {
+  @apply absolute right-4 top-2 text-white;
+}
+.tdoc div [class*="language-"] > button.copy {
+  @apply absolute top-3 right-3 z-10 border rounded-md w-9 h-9 bg-white cursor-pointer;
+  direction: ltr;
+  opacity: 0;
+  background-image: var(--td-icon-copy);
+  background-position: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  transition: border-color 0.25s, background-color 0.25s, opacity 0.25s;
+}
+.tdoc div [class*="language-"] > button.copied {
+  background-image: var(--td-icon-copied);
+}
+.tdoc div[class*="language-"]:hover button.copy {
+  opacity: 1;
+}
