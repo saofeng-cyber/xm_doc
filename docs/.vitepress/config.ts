@@ -74,9 +74,7 @@ export default defineConfig({
       text: 'Edit this page on GitHub'
     },
   },
-  router: {
-    prefetchLinks: true
-  },
+  cleanUrls: true,
   markdown: {
     theme: 'github-dark',
     lineNumbers: true,
@@ -91,10 +89,11 @@ export default defineConfig({
     }
   },
   lastUpdated: true,
+  outDir: '../xm_doc',
   vite: {
     server: {
       host: true,
       port: 8082,
-    }
+    },
   }
 })
