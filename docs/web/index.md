@@ -1,5 +1,6 @@
 ---
 layout: doc
+comment: true
 ---
 
 # 前端技术路线

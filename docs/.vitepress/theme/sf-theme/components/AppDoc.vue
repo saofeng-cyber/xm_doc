@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineClientComponent } from 'vitepress'
+import Giscus from '@giscus/vue';
 import UserInfo from './UserInfo.vue';
 const Outline = defineClientComponent(() => {
     return import('./common/Outline.vue')
@@ -19,6 +20,12 @@ const BackUp = defineClientComponent(() => {
                     class="prose prose-img:rounded-xl flex-grow prose-invert order-1 md:prose-base xl:prose-lg px-6"> -->
                 <article class="tdoc">
                     <Content />
+                    <div class="comments-container">
+                        <Giscus id="comments" repo="saofeng-cyber/xm_doc" repoId="R_kgDOLCQwoA"
+                            category="Announcements" categoryId="DIC_kwDOLCQwoM4CcZw2" mapping="specific"
+                            term="Welcome to @giscus/vue component!" reactionsEnabled="1" emitMetadata="0"
+                            inputPosition="top" theme="light" lang="en" />
+                    </div>
                 </article>
                 <!-- </article> -->
                 <div class="relative text-slate-800 flex-shrink-0 order-2 hidden xl:flex flex-col min-w-[360px] pl-8">
@@ -28,14 +35,13 @@ const BackUp = defineClientComponent(() => {
                 <BackUp />
             </div>
         </div>
-        <!-- <div class="bg_img fixed left-0 top-0 w-full h-full pointer-events-none"></div> -->
     </div>
 </template>
-<!-- <style scoped>
-.bg_img {
-    background-image: url('/xm_doc/bg.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+<style scoped>
+#comments::part(iframe) {
+  width: 100%;
+  margin: auto;
+  display: flex;
 }
-</style> -->
+
+</style>

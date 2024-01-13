@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-
+import timeline from "vitepress-markdown-timeline"; 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "洵默の小窝 🥝",
@@ -27,8 +27,6 @@ export default defineConfig({
       label: '页面导航',
       level: 'deep'
     },
-
-    sidebar: [],
     externalLinkIcon: true,
     notFound: {
       title: '您来到了一片荒芜之地',
@@ -83,12 +81,13 @@ export default defineConfig({
     linkify: true,
     typographer: true,
     config(md) {
-      // md.use()
+      md.use(timeline)
     }
   },
   lastUpdated: true,
   outDir: '../xm_doc',
   vite: {
+    plugins:[],
     server: {
       host: true,
       port: 8082,

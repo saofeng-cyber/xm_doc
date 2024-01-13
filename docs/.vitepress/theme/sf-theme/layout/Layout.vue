@@ -4,6 +4,7 @@ import AppContent from '../components/AppContent.vue';
 import NavHeader from '../components/NavHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
 import { onMounted } from 'vue';
+import { useLive2d } from "vitepress-theme-website"
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { frontmatter } = useData()
@@ -15,6 +16,25 @@ onMounted(() => {
     document.documentElement.classList.remove('dark')
     localStorage.setItem('theme', 'light')
   }
+  useLive2d({
+    enable: true,
+    model: {
+      url: 'https://raw.githubusercontent.com/iCharlesZ/vscode-live2d-models/master/model-library/kesshouban/model.json'
+    },
+    display: {
+      position: 'left',
+      width: '135px',
+      height: '300px',
+      xOffset: '35px',
+      yOffset: '5px'
+    },
+    mobile: {
+      show: true
+    },
+    react: {
+      opacity: 0.8
+    }
+  })
 })
 
 </script>

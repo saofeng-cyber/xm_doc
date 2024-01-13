@@ -3,7 +3,7 @@ import NavTitle from './NavTitle.vue'
 import NavContent from './NavContent.vue'
 import Docsearch from './common/Docsearch.vue'
 import { useData } from 'vitepress'
-import { fomatTime } from "./composables/shared.ts"
+import { fomatTime } from "./composables/shared"
 import { computed, onMounted, ref } from 'vue';
 const { theme, frontmatter, site, page } = useData();
 const { nav } = theme.value;
@@ -86,8 +86,16 @@ const whiteName = () => {
     <div v-if="!isHome" class="post-info absolute bottom-24 w-full flex justify-center items-center flex-col text-white">
       <h1 class="text-2xl md:text-4xl text-center">{{ page.title }}</h1>
       <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
-        <p>🗓️</p>
+        <span>🗓️</span>
         <p class="ml-2">{{ fomatTime(page.lastUpdated) }}</p>
+      </div>
+      <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
+        <span>☠️</span>
+        <p class="ml-2"><span id="busuanzi_value_site_pv" /> 次</p>
+      </div>
+      <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
+        <span>👀</span>
+        <p class="ml-2"><span id="busuanzi_value_site_uv" /> 次</p>
       </div>
     </div>
 

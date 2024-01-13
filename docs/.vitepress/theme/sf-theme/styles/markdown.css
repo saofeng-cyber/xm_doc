@@ -9,9 +9,11 @@
   text-decoration: none;
   transition: color 0.25s, opacity 0.25s;
 }
-.header-anchor::before {
+
+.tdoc .header-anchor::before {
   content: "🐅";
 }
+
 .tdoc h1,
 .tdoc h2,
 .tdoc h3,
@@ -22,7 +24,9 @@
   font-weight: 700;
   outline: none;
   margin: 20px 0 14px;
+  color: #39c5bb;
 }
+
 .tdoc h1:hover .header-anchor,
 .tdoc h1 .header-anchor:focus,
 .tdoc h2:hover .header-anchor,
@@ -41,26 +45,33 @@
 .has-sidebar {
   display: none;
 }
+
 .tdoc {
   @apply container rounded-3xl py-10 px-16 mb-8 duration-500 ease-in-out;
   background-color: var(--tdoc-bg-color);
   color: var(--tdoc-text-color);
 }
+
 .tdoc h1 {
   @apply text-3xl;
 }
+
 .tdoc h2 {
   @apply text-2xl;
 }
+
 .tdoc h3 {
   @apply text-xl;
 }
+
 .tdoc h4 {
   @apply text-lg;
 }
+
 .tdoc h5 {
   @apply text-base;
 }
+
 .tdoc h6 {
   @apply text-sm;
 }
@@ -68,6 +79,7 @@
 .tdoc p {
   @apply pb-4;
 }
+
 .tdoc ul {
   @apply py-6 text-lg list-disc;
 }
@@ -96,7 +108,8 @@
 .tdoc div [class*="language-"] span.lang {
   @apply absolute right-4 top-2 text-white;
 }
-.tdoc div [class*="language-"] > button.copy {
+
+.tdoc div [class*="language-"]>button.copy {
   @apply absolute top-3 right-3 z-10 border rounded-md w-9 h-9 bg-white cursor-pointer;
   direction: ltr;
   opacity: 0;
@@ -106,17 +119,21 @@
   background-repeat: no-repeat;
   transition: border-color 0.25s, background-color 0.25s, opacity 0.25s;
 }
-.tdoc div [class*="language-"] > button.copied {
+
+.tdoc div [class*="language-"]>button.copied {
   background-image: var(--td-icon-copied);
 }
+
 .tdoc div[class*="language-"]:hover button.copy {
   opacity: 1;
 }
+
 .tdoc div[class*="language-"] pre {
   margin-left: 3.5rem;
   padding-left: 1rem;
   vertical-align: middle;
 }
+
 .tdoc div[class*="language-"] .line-numbers-wrapper {
   position: absolute;
   top: 0;
@@ -127,6 +144,7 @@
   counter-reset: linenumber;
   text-align: center;
 }
+
 .tdoc div[class*="language-"] .line-numbers-wrapper::after {
   content: "";
   position: absolute;
@@ -137,17 +155,20 @@
   border-radius: 6px 0 0 6px;
   border-right: 1px solid rgba(0, 0, 0, 0.6);
 }
+
 .tdoc a {
   position: relative;
   color: #39c5bb;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
+
 .tdoc blockquote {
   @apply p-4 mr-5 my-8 rounded-md;
   border-left: 5px solid #39c5bb;
   background: #eef7fa;
 }
+
 .tdoc blockquote p {
   @apply pb-0;
 }
