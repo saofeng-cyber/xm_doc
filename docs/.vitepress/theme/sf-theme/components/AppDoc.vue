@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineClientComponent, onContentUpdated } from 'vitepress'
+import { defineClientComponent } from 'vitepress'
 import UserInfo from './UserInfo.vue';
 const Outline = defineClientComponent(() => {
     return import('./common/Outline.vue')
@@ -9,10 +9,6 @@ const BackUp = defineClientComponent(() => {
     return import('./common/BackUp.vue')
 })
 
-// onContentUpdated(() => {
-//     import('./dataJs/post.data').then(data => {
-//     })
-// })
 
 </script>
 <template>

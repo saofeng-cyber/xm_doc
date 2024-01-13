@@ -6,6 +6,7 @@ import { fomatTime } from "./composables/shared.ts"
 import { computed, onMounted, ref } from 'vue';
 const { theme, frontmatter, site, page } = useData();
 const { nav } = theme.value;
+
 const headerRef = ref<HTMLElement>();
 const hasNavbar = computed(() => {
   return frontmatter.value.navbar !== false

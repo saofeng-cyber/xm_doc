@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import { xmThemeConfig  } from "./theme/sf-theme/config"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
