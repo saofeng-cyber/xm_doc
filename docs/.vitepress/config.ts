@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitepress'
-import markdownItContainer from "markdown-it-container"
+import { defineConfig } from 'vitepress';
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "洵默の小窝 🥝",
@@ -10,7 +10,7 @@ export default defineConfig({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/xm_doc/header.jpg',
+    logo: '/header.gif',
     nav: [
       { text: '首页', link: '/' },
       {
@@ -52,12 +52,12 @@ export default defineConfig({
       {
         icon: {
           svg: 'github'
-        }, link: 'https://github.com/vuejs/vitepress', ariaLabel: 'Github'
+        }, link: 'https://github.com/saofeng-cyber', ariaLabel: 'Github'
       },
       {
         icon: {
           svg: 'qq',
-        }, link: 'https://github.com/vuejs/vitepress', ariaLabel: 'QQ'
+        }, link: 'https://res.abeim.cn/api/qq/?qq=942391953', ariaLabel: 'QQ'
       },
       {
         icon: {
@@ -80,14 +80,10 @@ export default defineConfig({
   markdown: {
     theme: 'github-dark',
     config(md) {
-      md.use(markdownItContainer)
+      // md.use()
     }
   },
   lastUpdated: true,
-  transformHtml: (code, id, ctx) => {
-    console.log(code);
-
-  },
   vite: {
     server: {
       host: true,

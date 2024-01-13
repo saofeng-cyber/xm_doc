@@ -17,3 +17,5 @@ console.log(`
                 ﾄ-,/  |___./
                 'ｰ'    !_,.:
 `)
+
+console.log("%c请尽情享用吧！🎉🎉🎉", "color: #39c5bb");

@@ -46,7 +46,7 @@ const whiteName = () => {
 
 </script>
 <template>
-  <div class="relative" :class="[isHome ? 'h-screen' : 'h-[400px]']">
+  <div class="relative" :class="[isHome ? 'h-screen' : 'h-[420px]']">
     <header ref="headerRef" v-if="hasNavbar"
       class="fixed inset-0 whitespace-nowrap h-16 text-white font-bold flex items-center z-10 md:px-4 px-8 duration-500 ease-in-out">
       <nav class="flex w-full items-center justify-between lg:px-8" aria-label="Global">
@@ -78,9 +78,10 @@ const whiteName = () => {
       </a>
     </div>
     <div v-if="!isHome" class="post-info absolute bottom-24 w-full flex justify-center items-center flex-col text-white">
-      <h1 class="text-2xl md:text-4xl">{{ page.title }}</h1>
-      <div class="post-meta py-4 text-lg">
-        <p>Last updated：{{ fomatTime(page.lastUpdated) }}</p>
+      <h1 class="text-2xl md:text-4xl text-center">{{ page.title }}</h1>
+      <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
+          <p>🗓️</p>
+          <p class="ml-2">{{ fomatTime(page.lastUpdated) }}</p>
       </div>
     </div>
 
