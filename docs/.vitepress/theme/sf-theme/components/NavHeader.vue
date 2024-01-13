@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NavTitle from './NavTitle.vue'
 import NavContent from './NavContent.vue'
+import Docsearch from './common/Docsearch.vue'
 import { useData } from 'vitepress'
 import { fomatTime } from "./composables/shared.ts"
 import { computed, onMounted, ref } from 'vue';
@@ -10,6 +11,10 @@ const { nav } = theme.value;
 const headerRef = ref<HTMLElement>();
 const hasNavbar = computed(() => {
   return frontmatter.value.navbar !== false
+})
+
+const hasDocSearch = computed(() => {
+  return theme.value.search && theme.value.search.provider === 'algolia'
 })
 
 const isHome = computed(() => {
@@ -58,6 +63,7 @@ const whiteName = () => {
             <slot name="nav-bar-title-after" />
           </template>
         </NavTitle>
+        <Docsearch v-if="hasDocSearch" />
         <NavContent>
           <template #nav-bar-content-before>
             <slot name="nav-bar-content-before" />
@@ -80,8 +86,8 @@ const whiteName = () => {
     <div v-if="!isHome" class="post-info absolute bottom-24 w-full flex justify-center items-center flex-col text-white">
       <h1 class="text-2xl md:text-4xl text-center">{{ page.title }}</h1>
       <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
-          <p>🗓️</p>
-          <p class="ml-2">{{ fomatTime(page.lastUpdated) }}</p>
+        <p>🗓️</p>
+        <p class="ml-2">{{ fomatTime(page.lastUpdated) }}</p>
       </div>
     </div>
 

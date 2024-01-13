@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress';
-import { xmThemeConfig  } from "./theme/sf-theme/config"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -7,7 +6,7 @@ export default defineConfig({
   description: "Hope you have a good day 🎉🎉🎉",
   base: '/xm_doc/',
   head: [
-    ['link', { rel: 'icon', href: '/xm_doc/vue-nes.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/xm_doc/vue-nes.svg' }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -21,8 +20,6 @@ export default defineConfig({
           { text: 'javascript', link: '/web/javascript' }
         ]
       },
-      { text: '示例', link: '/guide/markdown-examples' },
-      { text: 'Api示例', link: '/guide/api-examples' },
       { text: '个人简介', link: '/guide/my-self' },
     ],
 
@@ -31,15 +28,7 @@ export default defineConfig({
       level: 'deep'
     },
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/xm_doc/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/xm_doc/api-examples' }
-        ]
-      }
-    ],
+    sidebar: [],
     externalLinkIcon: true,
     notFound: {
       title: '您来到了一片荒芜之地',
@@ -71,9 +60,17 @@ export default defineConfig({
       copyright: 'Copyright © 2024-present <a href="#">洵默の小窝</a>'
     },
     editLink: {
-      pattern: 'https://github.com/vsaofeng-cyber/xm_doc/edit/main/docs/:path',
+      pattern: 'https://github.com/saofeng-cyber/xm_doc/edit/master/docs/:path',
       text: 'Edit this page on GitHub'
     },
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: '8J64VVRP8K',
+        apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
+        indexName: 'xm_doc'
+      }
+    }
   },
   cleanUrls: true,
   markdown: {
