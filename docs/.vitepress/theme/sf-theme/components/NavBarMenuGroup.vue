@@ -38,7 +38,7 @@ const open = ref<boolean>(false)
     .button[aria-expanded="true"]~.menu {
         opacity: 1 !important;
         visibility: visible !important;
-        transform: translateY(1);
+        transform: translateY(10px);
     }
 }
 </style>

@@ -9,7 +9,7 @@ const { socialLinks } = theme.value;
 <template>
     <div class="user_bg py-6 px-4 mb-4 rounded-3xl">
         <div class="w-full flex justify-center pb-6">
-            <a href="#">
+            <a href="#" class="relative">
                 <img :src="withBase(theme.logo)" alt="logo" class="w-28 h-28 rounded-full" />
             </a>
         </div>
@@ -22,7 +22,7 @@ const { socialLinks } = theme.value;
         <div class="pt-4">
             <ul class="flex items-center justify-evenly">
                 <li v-for="{ link, icon } in socialLinks">
-                    <a :key="link" :href="link" class="btn_mode mx-3 duration-200 hover:scale-125">
+                    <a :key="link" :href="link" class="mx-3">
                         <font-awesome-icon size="xl" :icon="['fab', icon.svg]" />
                     </a>
                 </li>
@@ -33,5 +33,30 @@ const { socialLinks } = theme.value;
 <style lang="less" scoped>
 .user_bg {
     background-color: rgba(255, 255, 255, 0.88);
+
+    a:hover img {
+        transform: rotate(30deg) scale(1.2);
+    }
+
+
+    img {
+        animation: imgShadow 800ms linear infinite alternate;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    @keyframes imgShadow {
+
+        0% {
+            box-shadow: 0px 0px 6px rgb(57, 197, 188);
+        }
+
+        50% {
+            box-shadow: 0px 0px 12px rgb(57, 197, 188);
+        }
+
+        100% {
+            box-shadow: 0px 0px 24px rgb(57, 197, 188);
+        }
+    }
 }
 </style>

@@ -85,9 +85,7 @@ export default defineConfig({
       lazyLoading: true
     },
     linkify: true,
-    anchor: {
-      level: 3,
-    },
+    typographer: true,
     config(md) {
       // md.use()
     }

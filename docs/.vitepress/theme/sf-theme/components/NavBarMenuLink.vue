@@ -12,7 +12,7 @@ defineProps<{
 
 </script>
 <template>
-    <NavLink class="flex justify-center items-center mx-3 text-base left-16"
+    <NavLink class="flex justify-center items-center mx-3 text-base rounded-md duration-100 ease-in]"
         :class="{ NavLink: true, active: isActive(page.relativePath, item.activeMatch || item.link, !!item.activeMatch) }"
         :href="item.link" :target="item.target">
         <span v-html="item.text"></span>

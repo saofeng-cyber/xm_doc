@@ -17,7 +17,7 @@ onContentUpdated(() => {
 </script>
 <template>
     <div class="pt-16">
-        <div class="container mx-auto px-4 xl:px-0 transition-all duration-500 ease-in-out">
+        <div class="container mx-auto px-2 xl:px-0 transition-all duration-500 ease-in-out">
             <div class="relative flex justify-center">
                 <!-- <article
                     class="prose prose-img:rounded-xl flex-grow prose-invert order-1 md:prose-base xl:prose-lg px-6"> -->

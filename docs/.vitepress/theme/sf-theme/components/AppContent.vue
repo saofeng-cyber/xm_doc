@@ -7,7 +7,7 @@ import { useData } from 'vitepress'
 const { frontmatter, page } = useData()
 </script>
 <template>
-    <div class="relative pt-16 pb-1 dark:bg-gray-900 duration-300 ease-in-out dark:text-white">
+    <div class="relative pt-16 pb-1 duration-300 ease-in-out">
         <transition name="fade" mode="out-in">
             <slot name="not-found" v-if="page.isNotFound">
                 <NotFound />
