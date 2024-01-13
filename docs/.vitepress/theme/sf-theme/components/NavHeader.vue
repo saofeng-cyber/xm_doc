@@ -7,7 +7,6 @@ import { computed, onMounted, ref } from 'vue';
 const { theme, frontmatter, site, page } = useData();
 const { nav } = theme.value;
 const headerRef = ref<HTMLElement>();
-console.log(theme.value, site.value, page.value);
 const hasNavbar = computed(() => {
   return frontmatter.value.navbar !== false
 })
