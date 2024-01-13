@@ -20,7 +20,7 @@ export default defineConfig({
           { text: 'javascript', link: '/web/javascript' }
         ]
       },
-      { text: '个人简介', link: '/guide/my-self' },
+      { text: '个人简介', link: '/guide/mySelf' },
     ],
 
     outline: {
