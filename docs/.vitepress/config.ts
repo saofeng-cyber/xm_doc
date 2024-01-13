@@ -10,7 +10,7 @@ export default defineConfig({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/header.gif',
+    logo: '/header.jpeg',
     nav: [
       { text: '首页', link: '/' },
       {
@@ -79,6 +79,15 @@ export default defineConfig({
   },
   markdown: {
     theme: 'github-dark',
+    lineNumbers: true,
+    image: {
+      // 默认禁用图片懒加载
+      lazyLoading: true
+    },
+    linkify: true,
+    anchor: {
+      level: 3,
+    },
     config(md) {
       // md.use()
     }

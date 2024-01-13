@@ -85,7 +85,7 @@
 }
 
 .tdoc div [class*="language-"] {
-  @apply relative bg-slate-800 rounded-md py-4 px-8 my-4;
+  @apply relative bg-slate-800 rounded-md py-4 my-4;
 }
 
 .tdoc div [class*="language-"] span.lang {
@@ -106,4 +106,36 @@
 }
 .tdoc div[class*="language-"]:hover button.copy {
   opacity: 1;
+}
+.tdoc div[class*="language-"] pre {
+  margin-left: 3.5rem;
+  padding-left: 1rem;
+  vertical-align: middle;
+}
+.tdoc div[class*="language-"] .line-numbers-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.5rem;
+  color: #e2e3e4;
+  padding-top: 1rem;
+  counter-reset: linenumber;
+  text-align: center;
+}
+.tdoc div[class*="language-"] .line-numbers-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.5rem;
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  border-right: 1px solid rgba(0, 0, 0, 0.6);
+}
+.tdoc a {
+  position: relative;
+  color: #39c5bb;
+}
+.tdoc a::after {
+  content: "🚀";
 }
