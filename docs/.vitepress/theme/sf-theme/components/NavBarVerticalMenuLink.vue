@@ -5,17 +5,18 @@ import type { DefaultTheme } from 'vitepress'
 import { isActive } from './composables/shared'
 const { page } = useData()
 defineProps<{
-    item: DefaultTheme.NavItemWithLink
+    item: DefaultTheme.NavItemWithLink,
+    child?: boolean
 }>()
 
 
 
 </script>
 <template>
-    <NavLink class="flex justify-center items-center mx-3 text-base rounded-md duration-100 ease-in"
-        :class="{ NavLink: true, active: isActive(page.relativePath, item.activeMatch || item.link, !!item.activeMatch) }"
+    <NavLink class="w-[288px] flex justify-between items-center mx-3 my-2 text-base rounded-md duration-100 ease-in"
+        :class="{ NavLink: true, active: isActive(page.relativePath, item.activeMatch || item.link, !!item.activeMatch), 'pl-4': child}"
         :href="item.link" :target="item.target">
-        <span v-html="item.text"></span>
+        <span class="text-lg" v-html="item.text"></span>
     </NavLink>
 </template>
 <style lang="less" scoped>

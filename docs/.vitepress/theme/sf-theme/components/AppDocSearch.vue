@@ -20,9 +20,9 @@ onMounted(() => {
 </template>
 <style lang="less">
 #docsearch {
+    margin-left: 1rem;
     .DocSearch-Button {
         background-color: #eff0f3;
-        flex-shrink: 0;
     }
 }
 </style>

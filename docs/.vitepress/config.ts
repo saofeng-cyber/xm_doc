@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 import timeline from "vitepress-markdown-timeline"; 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "洵默の小窝 🥝",
+  title: "洵默の小窝",
   description: "Hope you have a good day 🎉🎉🎉",
   base: '/xm_doc/',
   head: [
