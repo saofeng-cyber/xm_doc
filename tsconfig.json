@@ -16,5 +16,5 @@
     "baseUrl": ".",
     "types": ["vite/client", "node"]
   },
-  "include": ["docs/.vitepress/theme/*", "docs/.vitepress/theme/sf-theme/plugins"]
+  "include": ["docs/.vitepress/theme/**/*"]
 }

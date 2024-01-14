@@ -2,7 +2,7 @@
 import { useData, withBase, onContentUpdated } from 'vitepress'
 import { ref } from 'vue';
 const { frontmatter } = useData();
-const { hero, features } = frontmatter.value;
+const { hero } = frontmatter.value;
 const name = ref(hero.name);
 const actions = ref(hero.actions);
 const whiteName = () => {

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useData, withBase } from 'vitepress';
-
-const { frontmatter } = useData();
 </script>
 <template>
     <div class="relativ duration-300">
