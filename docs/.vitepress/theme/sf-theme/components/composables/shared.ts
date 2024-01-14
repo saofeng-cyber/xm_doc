@@ -67,7 +67,7 @@ export const formatTime = (time: number | undefined) => {
         const day = date.getDate();
         const hour = date.getHours();
         const minute = date.getMinutes();
-        return `${year}-${month}-${day} ${hour}:${minute}`;
+        return `${year}/${month}/${day}  ${hour}:${minute}`;
     }
 
 }
