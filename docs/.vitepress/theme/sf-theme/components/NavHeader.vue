@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import NavTitle from './NavTitle.vue'
 import NavContent from './NavContent.vue'
-import DocSearch from './AppDocSearch.vue'
 import NavHamburger from './NavHamburger.vue';
 import HeaderContent from './HeaderContent.vue';
 import { useData } from 'vitepress'
@@ -15,9 +14,7 @@ const hasNavbar = computed(() => {
   return frontmatter.value.navbar !== false
 })
 
-const hasDocSearch = computed(() => {
-  return theme.value.search && theme.value.search.provider === 'algolia'
-})
+
 
 const isHome = computed(() => {
   return frontmatter.value.layout === 'home'
@@ -65,7 +62,6 @@ const whiteName = () => {
           <slot name="nav-bar-title-after" />
         </template>
       </NavTitle>
-      <DocSearch v-if="hasDocSearch" />
       <NavContent>
         <template #nav-bar-content-before>
           <slot name="nav-bar-content-before" />

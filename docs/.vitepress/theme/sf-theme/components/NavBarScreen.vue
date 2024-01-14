@@ -2,8 +2,10 @@
 import { useData, withBase } from 'vitepress';
 import { watchEffect } from 'vue';
 import { navScreen } from "../store/app/app-set"
+import NavBarVerticalMenuLink from './NavBarVerticalMenuLink.vue';
+import NavBarMenuVerticalGroup from './NavBarMenuVerticalGroup.vue';
 const useNavScreen = navScreen()
-const { theme } = useData();
+const { theme, site } = useData();
 const props = defineProps<{ isOpen: boolean }>();
 watchEffect(() => {
     if (props.isOpen) {
@@ -17,22 +19,38 @@ watchEffect(() => {
 const closeMenu = () => {
     useNavScreen.setOpen(false)
 }
+
+console.log(theme.value);
+
 </script>
 <template>
     <div class="NavBarSCreen">
         <div :aria-open="isOpen"
-            class="NavBarContent fixed z-[1000] top-0 bottom-0 w-full overflow-y-auto bg-white p-6 duration-300 ease-out">
-            <div class="flex justify-center">
-                <img :src="withBase(theme.logo)" alt="logo" class="w-28 h-28 rounded-full" />
-            </div>
+            class="NavBarContent fixed z-[1000] top-0 h-full w-full overflow-y-auto p-6 duration-300 ease-out">
             <div class="absolute right-6 top-6" @click="closeMenu">
                 <font-awesome-icon size="xl" :icon="['fas', 'times']" />
+            </div>
+            <div class="flex justify-center">
+                <img :src="withBase(theme.logo)" alt="logo" class="imgAnimateShadow w-28 h-28 rounded-full" />
+            </div>
+            <h3 class="py-6 font-semibold text-2xl text-center leading-6">{{ site.title }}</h3>
+            <div class="w-full mt-6 flex flex-col items-center">
+                <template v-for="item in theme.nav" :key="item.text">
+                    <NavBarVerticalMenuLink v-if="'link' in item" :item="item" />
+                    <NavBarMenuVerticalGroup v-else :button="item.text" :items="item.items" />
+                </template>
             </div>
         </div>
     </div>
 </template>
 
 <style lang="less" scoped>
+.NavBarContent {
+    background-color: var(--tdoc-side-color);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+}
+
 .NavBarContent[aria-open="true"] {
     transform: translateY(0);
 }

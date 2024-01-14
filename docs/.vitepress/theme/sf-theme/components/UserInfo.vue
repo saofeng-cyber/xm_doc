@@ -44,20 +44,5 @@ const { socialLinks } = theme.value;
         animation: imgShadow 800ms linear infinite alternate;
         transition: transform 0.5s ease-in-out;
     }
-
-    @keyframes imgShadow {
-
-        0% {
-            box-shadow: 0px 0px 6px rgb(57, 197, 188);
-        }
-
-        50% {
-            box-shadow: 0px 0px 12px rgb(57, 197, 188);
-        }
-
-        100% {
-            box-shadow: 0px 0px 24px rgb(57, 197, 188);
-        }
-    }
 }
 </style>
