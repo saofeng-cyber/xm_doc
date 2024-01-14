@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import NavTitle from './NavTitle.vue'
 import NavContent from './NavContent.vue'
-import Docsearch from './common/Docsearch.vue'
+import DocSearch from './common/DocSearch.vue'
 import { useData } from 'vitepress'
-import { fomatTime } from "./composables/shared"
+import { formatTime } from "./composables/shared"
 import { computed, onMounted, ref } from 'vue';
 const { theme, frontmatter, site, page } = useData();
 const { nav } = theme.value;
@@ -63,7 +63,7 @@ const whiteName = () => {
             <slot name="nav-bar-title-after" />
           </template>
         </NavTitle>
-        <Docsearch v-if="hasDocSearch" />
+        <DocSearch v-if="hasDocSearch" />
         <NavContent>
           <template #nav-bar-content-before>
             <slot name="nav-bar-content-before" />
@@ -85,19 +85,11 @@ const whiteName = () => {
     </div>
     <div v-if="!isHome" class="post-info absolute bottom-24 w-full flex justify-center items-center flex-col text-white">
       <h1 class="text-2xl md:text-4xl text-center">{{ page.title }}</h1>
-      <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
-        <span>🗓️</span>
-        <p class="ml-2">{{ fomatTime(page.lastUpdated) }}</p>
-      </div>
-      <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
-        <span>☠️</span>
-        <p class="ml-2"><span id="busuanzi_value_site_pv" /> 次</p>
-      </div>
-      <div class="post-meta py-4 w-full flex justify-center items-center text-2xl">
-        <span>👀</span>
-        <p class="ml-2"><span id="busuanzi_value_site_uv" /> 次</p>
+      <div class="post-meta flex items-center pt-8 text-lg font-semibold">
+        <p>🗓️<span>{{ formatTime(page.lastUpdated) }}</span> <span class="px-2">|</span></p>
+        <p>☠️<span id="busuanzi_value_site_pv" /> 次 <span class="px-2">|</span></p>
+        <p>👀<span id="busuanzi_value_site_uv" /> 次 </p>
       </div>
     </div>
-
   </div>
 </template>

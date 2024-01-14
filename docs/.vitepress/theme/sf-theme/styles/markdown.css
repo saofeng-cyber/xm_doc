@@ -47,7 +47,7 @@
 }
 
 .tdoc {
-  @apply container rounded-3xl py-10 px-16 mb-8 duration-500 ease-in-out;
+  @apply container rounded-3xl px-4 py-6 md:px-10 mb-8 duration-500 ease-in-out;
   background-color: var(--tdoc-bg-color);
   color: var(--tdoc-text-color);
 }

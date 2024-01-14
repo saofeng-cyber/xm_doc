@@ -59,7 +59,7 @@ export function normalizeLink(url: string) {
     return withBase(normalizedPath);
 }
 
-export const fomatTime = (time: number | undefined) => {
+export const formatTime = (time: number | undefined) => {
     if (time) {
         const date = new Date(time);
         const year = date.getFullYear();
