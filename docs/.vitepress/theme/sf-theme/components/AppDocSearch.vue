@@ -21,7 +21,8 @@ onMounted(() => {
 <style lang="less">
 #docsearch {
     .DocSearch-Button {
-        background-color: #ebedf0;
+        background-color: #eff0f3;
+        flex-shrink: 0;
     }
 }
 </style>

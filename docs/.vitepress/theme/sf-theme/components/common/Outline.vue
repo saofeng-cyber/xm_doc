@@ -26,6 +26,7 @@ onContentUpdated(()=>{
 </template>
 <style lang="less" scoped>
 .user_bg {
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: var(--tdoc-bg-color);
+    color: var(--tdoc-text-color);
 }
 </style>

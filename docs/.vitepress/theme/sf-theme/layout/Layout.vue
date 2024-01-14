@@ -3,11 +3,18 @@ import { useData } from 'vitepress'
 import AppContent from '../components/AppContent.vue';
 import NavHeader from '../components/NavHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
-import { onMounted } from 'vue';
+import NavBarScreen from '../components/NavBarScreen.vue';
+import { computed, onMounted } from 'vue';
+import { navScreen } from "../store/app/app-set"
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { frontmatter } = useData()
+const useNavScreen = navScreen()
 
+
+const isOpen = computed(() => {
+  return useNavScreen.openMenu
+})
 onMounted(() => {
   if (localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark')
@@ -21,7 +28,7 @@ onMounted(() => {
 
 <template>
   <div id="web_bg"></div>
-  <div v-if="frontmatter.layout" class="layout relative min-h-screen flex flex-col" :class="frontmatter.pageClass">
+  <div class="layout" :class="frontmatter.pageClass">
     <nav-header>
       <template #nav-bar-title-before>
         <slot name="nav-bar-title-before" />
@@ -62,5 +69,5 @@ onMounted(() => {
     <app-footer />
     <slot name="layout-bottom" />
   </div>
-  <Content v-else />
+  <NavBarScreen :is-open="isOpen" />
 </template>

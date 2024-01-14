@@ -27,7 +27,7 @@ watch(themeMode, (val) => {
 
 </script>
 <template>
-    <div class="hidden xl:block ml-3">
+    <div class="hidden md:block ml-3">
         <input type="checkbox" name="" v-model="themeMode" id="switch" class="hidden" @change="changeDarkMode">
         <label for="switch">
             <font-awesome-icon class="one w-4 h-4 text-[#f2c40f]" size="lg" :icon="['fas', 'moon']" />

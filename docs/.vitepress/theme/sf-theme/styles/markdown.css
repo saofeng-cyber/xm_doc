@@ -47,7 +47,7 @@
 }
 
 .tdoc {
-  @apply container rounded-3xl px-4 py-6 md:px-10 mb-8 duration-500 ease-in-out;
+  @apply container rounded-3xl px-4 py-6 md:px-10 mb-8 duration-200;
   background-color: var(--tdoc-bg-color);
   color: var(--tdoc-text-color);
 }
@@ -166,7 +166,7 @@
 .tdoc blockquote {
   @apply p-4 mr-5 my-8 rounded-md;
   border-left: 5px solid #39c5bb;
-  background: #eef7fa;
+  background: var(--tdoc-bg-color);
 }
 
 .tdoc blockquote p {
