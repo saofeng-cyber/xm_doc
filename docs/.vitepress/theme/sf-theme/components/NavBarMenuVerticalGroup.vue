@@ -17,7 +17,7 @@ const changeOpen = () => {
             <span class="text-lg">{{ button }}</span>
             <font-awesome-icon size="lg" :rotation="open ? 180 : 270" :icon="['fas', 'chevron-down']" />
         </div>
-        <div class="menu duration-300 ease-in-out overflow-hidden" :style="{ height: open ? (items?.length || 0) * 50 + 'px' : '0px' }">
+        <div class="menu duration-300 ease-in-out overflow-hidden" :style="{ '--n': items?.length || 0  }">
             <template v-for="item in items" :key="item.text">
                 <NavBarVerticalMenuLink :item="item" :child="true" class="py-1" />
             </template>
@@ -28,5 +28,11 @@ const changeOpen = () => {
 .NavbarGroup {
     position: relative;
     user-select: none;
+    .menu {
+        height: 0;
+    }
+    .button[aria-expanded="true"]~.menu {
+        height: calc(var(--n) * 48px);
+    }
 }
 </style>
