@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavTitle from './NavTitle.vue'
 import NavContent from './NavContent.vue'
-import DocSearch from './common/DocSearch.vue'
+import DocSearch from './AppDocSearch.vue'
 import { useData } from 'vitepress'
 import { formatTime } from "./composables/shared"
 import { computed, onMounted, ref } from 'vue';
