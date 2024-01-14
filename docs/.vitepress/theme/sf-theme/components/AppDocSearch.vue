@@ -2,18 +2,16 @@
 import docsearch from '@docsearch/js';
 
 import '@docsearch/css';
-import { onMounted } from 'vue';
 
+import { useData } from "vitepress"
+import { onMounted } from 'vue';
+const { theme } = useData()
+const searchOption = theme.value.search.options
 onMounted(() => {
+
     docsearch({
         container: '#docsearch',
-        appId: 'R2IYF7ETH7',
-        apiKey: '599cec31baffa4868cae4e79f180729b',
-        indexName: 'docsearch',
-        // searchParameters: {
-        //     facetFilters: ['language:en', 'version:1.0.0'],
-        // },
-        // insights: true,
+        ...searchOption,
     })
 })
 </script>

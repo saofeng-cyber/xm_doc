@@ -42,20 +42,20 @@ export default defineConfig({
           svg: 'github'
         }, link: 'https://github.com/saofeng-cyber', ariaLabel: 'Github'
       },
-      {
-        icon: {
-          svg: 'qq',
-        }, link: 'https://res.abeim.cn/api/qq/?qq=942391953', ariaLabel: 'QQ'
-      },
-      {
-        icon: {
-          svg: 'weixin',
-        }, link: 'https://github.com/vuejs/vitepress', ariaLabel: 'WX'
-      },
+      // {
+      //   icon: {
+      //     svg: 'qq',
+      //   }, link: 'https://res.abeim.cn/api/qq/?qq=942391953', ariaLabel: 'QQ'
+      // },
+      // {
+      //   icon: {
+      //     svg: 'weixin',
+      //   }, link: 'https://github.com/vuejs/vitepress', ariaLabel: 'WX'
+      // },
     ],
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024-present <a href="#">洵默の小窝</a>'
+      copyright: 'Copyright © 2024-present <a href="https://github.com/saofeng-cyber/xm_doc" target="_blank">洵默の小窝</a>'
     },
     editLink: {
       pattern: 'https://github.com/saofeng-cyber/xm_doc/edit/master/docs/:path',
@@ -64,8 +64,8 @@ export default defineConfig({
     search: {
       provider: 'algolia',
       options: {
-        appId: '8J64VVRP8K',
-        apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
+        appId: '8NVRCTCGT5',
+        apiKey: 'e385f437fe5fa725ded3a672a8278f51',
         indexName: 'xm_doc'
       }
     }
