@@ -85,7 +85,6 @@ export default defineConfig({
     }
   },
   lastUpdated: true,
-  outDir: '../xm_doc',
   vite: {
     plugins:[],
     server: {
