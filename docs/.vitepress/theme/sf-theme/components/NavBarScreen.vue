@@ -20,8 +20,6 @@ const closeMenu = () => {
     useNavScreen.setOpen(false)
 }
 
-console.log(theme.value);
-
 </script>
 <template>
     <div class="NavBarSCreen">

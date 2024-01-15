@@ -18,9 +18,9 @@ const open = ref<boolean>(false)
             <font-awesome-icon v-else :icon="['fas', 'chevron-down']" />
         </button>
         <div
-            class="menu p-2 rounded-md absolute bg-white text-slate-700 shadow-lg top-12 duration-300 ease-in-out">
+            class="menu p-2 min-w-[160px] rounded-md absolute bg-white text-slate-700 shadow-lg top-12 duration-300 ease-in-out">
             <template v-for="item in items" :key="item.text">
-                <NavBarMenuLink :item="item" class="py-1" />
+                <NavBarMenuLink :item="item" />
             </template>
         </div>
     </div>

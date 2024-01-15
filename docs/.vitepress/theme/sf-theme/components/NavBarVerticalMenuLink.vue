@@ -13,10 +13,10 @@ defineProps<{
 
 </script>
 <template>
-    <NavLink class="w-[288px] flex justify-between items-center mx-3 my-2 text-base rounded-md duration-100 ease-in"
+    <NavLink class="min-w-[288px] flex justify-between items-center my-2 text-base rounded-md duration-100 ease-in"
         :class="{ NavLink: true, active: isActive(page.relativePath, item.activeMatch || item.link, !!item.activeMatch), 'pl-4': child}"
         :href="item.link" :target="item.target">
-        <span class="text-lg" v-html="item.text"></span>
+        <div class="text-lg" v-html="item.text"></div>
     </NavLink>
 </template>
 <style lang="less" scoped>

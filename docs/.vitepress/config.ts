@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress';
-import timeline from "vitepress-markdown-timeline"; 
+import timeline from "vitepress-markdown-timeline";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "洵默の小窝",
   description: "Hope you have a good day 🎉🎉🎉",
   base: '/xm_doc/',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/xm_doc/vue-nes.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/xm_doc/header.jpeg' }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -17,7 +17,10 @@ export default defineConfig({
         text: '前端',
         items: [
           { text: '前端技术路线', link: '/web/' },
-          { text: 'javascript', link: '/web/javascript' }
+          { text: 'Html5', link: '/web/html/' },
+          { text: 'Css3', link: '/web/css/' },
+          { text: 'JavaScript', link: '/web/js/' },
+          { text: 'Vue3', link: '/web/vue/' },
         ]
       },
       { text: '个人简介', link: '/guide/mySelf' },
@@ -86,7 +89,7 @@ export default defineConfig({
   },
   lastUpdated: true,
   vite: {
-    plugins:[],
+    plugins: [],
     server: {
       host: true,
       port: 8082,
