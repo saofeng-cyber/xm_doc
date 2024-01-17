@@ -23,7 +23,7 @@ const closeMenu = () => {
 </script>
 <template>
     <div class="NavBarSCreen">
-        <div :aria-open="isOpen"
+        <div :aria-expanded="isOpen"
             class="NavBarContent fixed z-[1000] top-0 h-full w-full overflow-y-auto p-6 duration-300 ease-out">
             <div class="absolute right-6 top-6" @click="closeMenu">
                 <font-awesome-icon size="xl" :icon="['fas', 'times']" />
@@ -49,11 +49,11 @@ const closeMenu = () => {
     color: #ffffff;
 }
 
-.NavBarContent[aria-open="true"] {
+.NavBarContent[aria-expanded="true"] {
     transform: translateY(0);
 }
 
-.NavBarContent[aria-open="false"] {
+.NavBarContent[aria-expanded="false"] {
     transform: translateY(-100%);
 }
 </style>

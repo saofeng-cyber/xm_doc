@@ -47,7 +47,7 @@
 }
 
 .tdoc {
-  @apply container rounded-3xl px-4 py-6 md:px-10 mb-8 duration-200;
+  @apply container rounded-3xl px-4 py-6 md:px-10 mb-8 duration-200 leading-8;
   background-color: var(--tdoc-bg-color);
   color: var(--tdoc-text-color);
 }
@@ -77,7 +77,11 @@
 }
 
 .tdoc p {
-  @apply pb-4;
+  @apply py-4;
+}
+
+.tdoc p code {
+  @apply bg-[#f2f1f1] p-[2px] rounded-sm;
 }
 
 .tdoc ul {
@@ -109,7 +113,7 @@
   @apply absolute right-4 top-2 text-white;
 }
 
-.tdoc div [class*="language-"]>button.copy {
+.tdoc div [class*="language-"] > button.copy {
   @apply absolute top-3 right-3 z-10 border rounded-md w-9 h-9 bg-white cursor-pointer;
   direction: ltr;
   opacity: 0;
@@ -120,7 +124,7 @@
   transition: border-color 0.25s, background-color 0.25s, opacity 0.25s;
 }
 
-.tdoc div [class*="language-"]>button.copied {
+.tdoc div [class*="language-"] > button.copied {
   background-image: var(--td-icon-copied);
 }
 
@@ -141,7 +145,6 @@
   width: 3.5rem;
   color: #e2e3e4;
   padding-top: 1rem;
-  counter-reset: linenumber;
   text-align: center;
 }
 
@@ -164,11 +167,25 @@
 }
 
 .tdoc blockquote {
-  @apply p-4 mr-5 my-8 rounded-md;
+  @apply px-4 mr-5 my-6 rounded-md;
   border-left: 5px solid #39c5bb;
   background: var(--tdoc-bg-color);
 }
 
 .tdoc blockquote p {
-  @apply pb-0;
+  @apply py-3 pl-1;
+}
+
+.tdoc .info {
+  @apply m-1 pl-4 pr-2 rounded-md border-l-4 border-[#0085f2];
+  background-color: #0085f21a;
+}
+
+.tdoc .danger {
+  @apply m-1 pl-4 pr-2 rounded-md border-l-4 border-[#ff2a51];
+  background-color: #ff2a512a;
+}
+
+.tdoc .custom-block-title {
+  display: none;
 }

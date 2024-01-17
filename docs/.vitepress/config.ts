@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress';
 import timeline from "vitepress-markdown-timeline";
+import markdownItContainer from "markdown-it-container"
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "洵默の小窝",
@@ -84,7 +85,7 @@ export default defineConfig({
     linkify: true,
     typographer: true,
     config(md) {
-      md.use(timeline)
+      md.use(timeline).use(markdownItContainer)
     }
   },
   lastUpdated: true,
