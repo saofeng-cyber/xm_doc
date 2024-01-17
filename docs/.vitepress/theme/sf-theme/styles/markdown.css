@@ -190,7 +190,7 @@
   background-color: #0085f21a;
 }
 .tdoc .custom-block {
-  @apply left-8 p-0;
+  @apply leading-8 p-0;
 }
 
 .tdoc .custom-block.danger {
