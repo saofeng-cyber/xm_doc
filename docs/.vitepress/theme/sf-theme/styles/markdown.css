@@ -190,7 +190,7 @@
   background-color: #0085f21a;
 }
 .tdoc .custom-block {
-  padding: 0;
+  @apply left-8 p-0;
 }
 
 .tdoc .custom-block.danger {
