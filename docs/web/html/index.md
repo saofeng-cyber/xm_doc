@@ -36,503 +36,85 @@ layout: doc
 
 这个进度条是使用 `<div>` 构建的，没有任何意义。我们加入 ARIA 角色和属性以添加意义。在这个例子中，role="progressbar" (en-US) 属性告知浏览器，这个元素实际上是一个由 JavaScript 驱动的进度条小部件。aria-valuemin (en-US) 和 aria-valuemax (en-US) 属性指定进度条的最小值和最大值，aria-valuenow (en-US) 描述进度条的当前状态，因此必须使用 JavaScript 保持更新。
 
-## 一个例子
+### aria-activedescendant
+
+aria-activedescendant (en-US) 属性用于指定当前焦点所在的元素。
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    .disclosure-nav {
-      background-color: #eee;
-      display: flex;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .disclosure-nav ul {
-      background-color: #eee;
-      border: 1px solid #005a9c;
-      border-top-width: 5px;
-      border-radius: 0 0 4px 4px;
-      display: block;
-      list-style-type: none;
-      margin: 0;
-      min-width: 200px;
-      padding: 0;
-      position: absolute;
-      top: 100%;
-    }
-
-    .disclosure-nav li {
-      margin: 0;
-    }
-
-    .disclosure-nav > li {
-      display: flex;
-      position: relative;
-    }
-
-    .disclosure-nav ul a {
-      border: 0;
-      color: #000;
-      display: block;
-      margin: 0;
-      padding: 0.5em 1em;
-      text-decoration: underline;
-    }
-
-    .disclosure-nav ul a:hover,
-    .disclosure-nav ul a:focus {
-      background-color: #ddd;
-      margin-bottom: 0;
-      text-decoration: none;
-    }
-
-    .disclosure-nav ul a:focus {
-      outline: 5px solid rgb(0 90 156 / 75%);
-      position: relative;
-    }
-
-    .disclosure-nav button,
-    .disclosure-nav .main-link {
-      align-items: center;
-      background-color: transparent;
-      border: 1px solid transparent;
-      border-right-color: #ccc;
-      display: flex;
-      padding: 1em;
-    }
-
-    .disclosure-nav .main-link {
-      border-right-color: transparent;
-    }
-
-    .disclosure-nav button::after {
-      content: "";
-      border-bottom: 1px solid #000;
-      border-right: 1px solid #000;
-      height: 0.5em;
-      margin-left: 0.75em;
-      width: 0.5em;
-      transform: rotate(45deg);
-    }
-
-    .disclosure-nav .main-link + button::after {
-      margin-left: 0;
-    }
-
-    .disclosure-nav button:focus,
-    .disclosure-nav .main-link:focus {
-      border-color: #005a9c;
-      outline: 5px solid rgb(0 90 156 / 75%);
-      position: relative;
-    }
-
-    .disclosure-nav button:hover,
-    .disclosure-nav button[aria-expanded="true"] {
-      background-color: #005a9c;
-      color: #fff;
-    }
-
-    .disclosure-nav button:hover::after,
-    .disclosure-nav button[aria-expanded="true"]::after {
-      border-color: #fff;
-    }
-
-    /* Styles for example page content section */
-    .disclosure-page-content {
-      border: 1px solid #ccc;
-      padding: 1em;
-    }
-
-    .disclosure-page-content h3 {
-      margin-top: 0.5em;
-    }
-
-    .sample-header {
-      border: #005a9c solid 2px;
-      background: #005a9c;
-      color: white;
-      text-align: center;
-    }
-
-    .sample-header .title {
-      font-size: 2.5em;
-      font-weight: bold;
-      font-family: serif;
-    }
-
-    .sample-header .tagline {
-      font-style: italic;
-    }
-
-    .sample-footer {
-      border: #005a9c solid 2px;
-      background: #005a9c;
-      font-family: serif;
-      color: white;
-      font-style: italic;
-      padding-left: 1em;
-    }
-  </style>
-
-  <body>
-    <nav aria-label="Mythical University">
-      <ul id="exTest" class="disclosure-nav">
-        <li>
-          <button
-            type="button"
-            aria-expanded="true"
-            aria-controls="id_about_menu"
-          >
-            About
-          </button>
-          <ul id="id_about_menu">
-            <li>
-              <a href="#mythical-page-content"> Overview </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Administration </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Facts </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Campus Tours </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <button
-            type="button"
-            aria-expanded="true"
-            aria-controls="id_admissions_menu"
-          >
-            Admissions
-          </button>
-          <ul id="id_admissions_menu">
-            <li>
-              <a href="#mythical-page-content"> Apply </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Tuition </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Sign Up </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Visit </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Photo Tour </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Connect </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <button
-            type="button"
-            aria-expanded="true"
-            aria-controls="id_academics_menu"
-          >
-            Academics
-          </button>
-          <ul id="id_academics_menu">
-            <li>
-              <a href="#mythical-page-content"> Colleges & Schools </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Programs of Study </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Honors Programs </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Online Courses </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Course Explorer </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Register for Class </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Academic Calendar </a>
-            </li>
-            <li>
-              <a href="#mythical-page-content"> Transcripts </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <div
-      id="mythical-page-content"
-      class="disclosure-page-content"
-      tabindex="-1"
-      role="region"
-      aria-label="Mythical University sample page content"
-    >
-      <h3 id="mythical-page-heading">Mythical University</h3>
-      <p>
-        Sample content section. Activating a link above will update and navigate
-        to this region.
-      </p>
-    </div>
-
-    <script>
-      /*
-       *   This content is licensed according to the W3C Software License at
-       *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
-       *
-       *   Supplemental JS for the disclosure menu keyboard behavior
-       */
-
-      "use strict";
-
-      class DisclosureNav {
-        constructor(domNode) {
-          this.rootNode = domNode;
-          this.controlledNodes = [];
-          this.openIndex = null;
-          this.useArrowKeys = true;
-          this.topLevelNodes = [
-            ...this.rootNode.querySelectorAll(
-              ".main-link, button[aria-expanded][aria-controls]"
-            ),
-          ];
-
-          this.topLevelNodes.forEach((node) => {
-            // handle button + menu
-            if (
-              node.tagName.toLowerCase() === "button" &&
-              node.hasAttribute("aria-controls")
-            ) {
-              const menu = node.parentNode.querySelector("ul");
-              if (menu) {
-                // save ref controlled menu
-                this.controlledNodes.push(menu);
-
-                // collapse menus
-                node.setAttribute("aria-expanded", "false");
-                this.toggleMenu(menu, false);
-
-                // attach event listeners
-                menu.addEventListener("keydown", this.onMenuKeyDown.bind(this));
-                node.addEventListener("click", this.onButtonClick.bind(this));
-                node.addEventListener(
-                  "keydown",
-                  this.onButtonKeyDown.bind(this)
-                );
-              }
-            }
-            // handle links
-            else {
-              this.controlledNodes.push(null);
-              node.addEventListener("keydown", this.onLinkKeyDown.bind(this));
-            }
-          });
-
-          this.rootNode.addEventListener("focusout", this.onBlur.bind(this));
-        }
-
-        controlFocusByKey(keyboardEvent, nodeList, currentIndex) {
-          switch (keyboardEvent.key) {
-            case "ArrowUp":
-            case "ArrowLeft":
-              keyboardEvent.preventDefault();
-              if (currentIndex > -1) {
-                var prevIndex = Math.max(0, currentIndex - 1);
-                nodeList[prevIndex].focus();
-              }
-              break;
-            case "ArrowDown":
-            case "ArrowRight":
-              keyboardEvent.preventDefault();
-              if (currentIndex > -1) {
-                var nextIndex = Math.min(nodeList.length - 1, currentIndex + 1);
-                nodeList[nextIndex].focus();
-              }
-              break;
-            case "Home":
-              keyboardEvent.preventDefault();
-              nodeList[0].focus();
-              break;
-            case "End":
-              keyboardEvent.preventDefault();
-              nodeList[nodeList.length - 1].focus();
-              break;
-          }
-        }
-
-        // public function to close open menu
-        close() {
-          this.toggleExpand(this.openIndex, false);
-        }
-
-        onBlur(event) {
-          var menuContainsFocus = this.rootNode.contains(event.relatedTarget);
-          if (!menuContainsFocus && this.openIndex !== null) {
-            this.toggleExpand(this.openIndex, false);
-          }
-        }
-
-        onButtonClick(event) {
-          var button = event.target;
-          var buttonIndex = this.topLevelNodes.indexOf(button);
-          var buttonExpanded = button.getAttribute("aria-expanded") === "true";
-          this.toggleExpand(buttonIndex, !buttonExpanded);
-        }
-
-        onButtonKeyDown(event) {
-          var targetButtonIndex = this.topLevelNodes.indexOf(
-            document.activeElement
-          );
-
-          // close on escape
-          if (event.key === "Escape") {
-            this.toggleExpand(this.openIndex, false);
-          }
-
-          // move focus into the open menu if the current menu is open
-          else if (
-            this.useArrowKeys &&
-            this.openIndex === targetButtonIndex &&
-            event.key === "ArrowDown"
-          ) {
-            event.preventDefault();
-            this.controlledNodes[this.openIndex].querySelector("a").focus();
-          }
-
-          // handle arrow key navigation between top-level buttons, if set
-          else if (this.useArrowKeys) {
-            this.controlFocusByKey(
-              event,
-              this.topLevelNodes,
-              targetButtonIndex
-            );
-          }
-        }
-
-        onLinkKeyDown(event) {
-          var targetLinkIndex = this.topLevelNodes.indexOf(
-            document.activeElement
-          );
-
-          // handle arrow key navigation between top-level buttons, if set
-          if (this.useArrowKeys) {
-            this.controlFocusByKey(event, this.topLevelNodes, targetLinkIndex);
-          }
-        }
-
-        onMenuKeyDown(event) {
-          if (this.openIndex === null) {
-            return;
-          }
-
-          var menuLinks = Array.prototype.slice.call(
-            this.controlledNodes[this.openIndex].querySelectorAll("a")
-          );
-          var currentIndex = menuLinks.indexOf(document.activeElement);
-
-          // close on escape
-          if (event.key === "Escape") {
-            this.topLevelNodes[this.openIndex].focus();
-            this.toggleExpand(this.openIndex, false);
-          }
-
-          // handle arrow key navigation within menu links, if set
-          else if (this.useArrowKeys) {
-            this.controlFocusByKey(event, menuLinks, currentIndex);
-          }
-        }
-
-        toggleExpand(index, expanded) {
-          // close open menu, if applicable
-          if (this.openIndex !== index) {
-            this.toggleExpand(this.openIndex, false);
-          }
-
-          // handle menu at called index
-          if (this.topLevelNodes[index]) {
-            this.openIndex = expanded ? index : null;
-            this.topLevelNodes[index].setAttribute("aria-expanded", expanded);
-            this.toggleMenu(this.controlledNodes[index], expanded);
-          }
-        }
-
-        toggleMenu(domNode, show) {
-          if (domNode) {
-            domNode.style.display = show ? "block" : "none";
-          }
-        }
-
-        updateKeyControls(useArrowKeys) {
-          this.useArrowKeys = useArrowKeys;
-        }
-      }
-
-      /* Initialize Disclosure Menus */
-
-      window.addEventListener(
-        "load",
-        function () {
-          var menus = document.querySelectorAll(".disclosure-nav");
-          var disclosureMenus = [];
-
-          for (var i = 0; i < menus.length; i++) {
-            disclosureMenus[i] = new DisclosureNav(menus[i]);
-          }
-
-          // listen to arrow key checkbox
-          var arrowKeySwitch = document.getElementById("arrow-behavior-switch");
-          if (arrowKeySwitch) {
-            arrowKeySwitch.addEventListener("change", function () {
-              var checked = arrowKeySwitch.checked;
-              for (var i = 0; i < disclosureMenus.length; i++) {
-                disclosureMenus[i].updateKeyControls(checked);
-              }
-            });
-          }
-
-          // fake link behavior
-          disclosureMenus.forEach((disclosureNav, i) => {
-            var links = menus[i].querySelectorAll(
-              '[href="#mythical-page-content"]'
-            );
-            var examplePageHeading = document.getElementById(
-              "mythical-page-heading"
-            );
-            for (var k = 0; k < links.length; k++) {
-              // The codepen export script updates the internal link href with a full URL
-              // we're just manually fixing that behavior here
-              links[k].href = "#mythical-page-content";
-
-              links[k].addEventListener("click", (event) => {
-                // change the heading text to fake a page change
-                var pageTitle = event.target.innerText;
-                examplePageHeading.innerText = pageTitle;
-
-                // handle aria-current
-                for (var n = 0; n < links.length; n++) {
-                  links[n].removeAttribute("aria-current");
-                }
-                event.target.setAttribute("aria-current", "page");
-              });
-            }
-          });
-        },
-        false
-      );
-    </script>
-  </body>
-</html>
+<div role="listbox" aria-activedescendant="item2">
+  <div id="item1" role="option">Item 1</div>
+  <div id="item2" role="option">Item 2</div>
+  <div id="item3" role="option">Item 3</div>
+</div>
 ```
+
+### aria-autocomplete
+
+aria-autocomplete (en-US) 属性用于指定输入字段是否应该自动完成。
+
+```html
+<input type="text" aria-autocomplete="both" />
+```
+
+### aria-checked
+
+aria-checked (en-US) 属性用于指定单选按钮或复选框是否被选中。
+
+```html
+<input type="radio" name="radio" id="radio1" aria-checked="false" />
+<input type="radio" name="radio" id="radio2" aria-checked="true" />
+<span
+  role="checkbox"
+  id="checkBoxInput"
+  aria-checked="false"
+  tabindex="0"
+  aria-labelledby="chk15-label"
+></span>
+<label id="chk15-label">Subscribe to the newsletter</label>
+```
+
+### aria-controls
+
+全局属性标识其内容或存在由设置此属性的元素控制的一个或多个元素
+
+```html
+<button aria-controls="details">Toggle details</button>
+<div id="details" aria-live="polite" aria-relevant="additions removals">
+  <p>Details go here</p>
+</div>
+```
+
+### aria-describedby
+
+aria-describedby (en-US) 属性用于指定与当前元素相关联的描述元素。
+
+```html
+<button aria-describedby="help">Help</button>
+<div id="help" aria-live="polite">
+  <p>Help text goes here</p>
+</div>
+```
+
+### aria-disabled
+
+aria-disabled (en-US) 属性用于指定当前元素是否被禁用。
+
+```html
+<button aria-disabled="true">Disabled</button>
+```
+
+### aria-expanded
+
+aria-expanded (en-US) 属性用于指定当前元素是否被展开。
+
+```html
+<button aria-expanded="true">Toggle</button>
+```
+
+::: info
+
+- [ARIA 状态和属性](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes)
+- [ARIA 角色](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)
+- [ARIA 操作指南](https://www.w3.org/WAI/ARIA/apg/)
+
+:::
