@@ -190,7 +190,7 @@
   background-color: #0085f21a;
 }
 
-.tdoc .danger, .custom-block .danger {
+.tdoc .custom-block {
   @apply m-1 pl-4 pr-2 rounded-md border-l-4 border-[#ff2a51];
   background-color: #ff2a512a;
 }
