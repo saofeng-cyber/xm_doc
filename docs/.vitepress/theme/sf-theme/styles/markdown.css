@@ -189,6 +189,10 @@
   @apply m-1 pl-4 pr-2 rounded-md border-l-4 border-[#0085f2];
   background-color: #0085f21a;
 }
+.tdoc .custom-block {
+  padding: 0;
+  line-height: 0;
+}
 
 .tdoc .custom-block.danger {
   @apply m-1 pl-4 pr-2 rounded-md border-l-4 border-[#ff2a51];
