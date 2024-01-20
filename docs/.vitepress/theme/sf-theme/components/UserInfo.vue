@@ -10,7 +10,7 @@ const { socialLinks } = theme.value;
     <div class="user_bg py-6 px-4 mb-4 rounded-3xl duration-100">
         <div class="w-full flex justify-center pb-6">
             <a href="#" class="relative">
-                <img :src="withBase(theme.logo)" alt="logo" class="w-28 h-28 rounded-full" />
+                <img :src="withBase(theme.logo)" alt="logo" class="w-28 h-28 rounded-full object-cover" />
             </a>
         </div>
         <h3 class="py-4 font-semibold text-2xl text-center leading-6">{{ site.title }}</h3>

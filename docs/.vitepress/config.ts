@@ -11,7 +11,7 @@ export default defineConfig({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/header.jpeg',
+    logo: '/top.jpg',
     nav: [
       { text: '首页', link: '/' },
       {
@@ -30,6 +30,7 @@ export default defineConfig({
           { text: 'JsTools', link: '/web/js/jsTools' },
         ]
       },
+      { text: 'Ai', link: '/ai/' },
       { text: '个人简介', link: '/guide/mySelf' },
     ],
 
