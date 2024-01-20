@@ -20,8 +20,14 @@ export default defineConfig({
           { text: '前端技术路线', link: '/web/' },
           { text: 'Html5', link: '/web/html/' },
           { text: 'Css3', link: '/web/css/' },
-          { text: 'JavaScript', link: '/web/js/' },
           { text: 'Vue3', link: '/web/vue/' },
+        ]
+      },
+      {
+        text: 'JavaScript',
+        items: [
+          { text: 'JavaScript', link: '/web/js/' },
+          { text: 'JsTools', link: '/web/js/jsTools' },
         ]
       },
       { text: '个人简介', link: '/guide/mySelf' },
