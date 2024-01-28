@@ -24,10 +24,12 @@ export default defineConfig({
         ]
       },
       {
-        text: 'JavaScript',
+        text: 'Js',
         items: [
-          { text: 'JavaScript', link: '/web/js/' },
-          { text: 'JsTools', link: '/web/js/jsTools' },
+          { text: '基础', link: '/web/js/' },
+          { text: '常用高效工具', link: '/web/js/jsTools' },
+          { text: '一些小案例', link: '/web/js/jsDemo' },
+          { text: '代码整洁之道', link: '/web/js/jsClean' },
         ]
       },
       { text: 'Ai', link: '/ai/' },
