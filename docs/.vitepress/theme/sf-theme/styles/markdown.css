@@ -77,15 +77,16 @@
 }
 
 .tdoc p {
-  @apply py-4;
+  @apply py-1;
 }
 
 .tdoc p code {
   @apply bg-[#f2f1f1] p-[2px] rounded-sm;
 }
 
-.tdoc ul {
-  @apply py-6 text-lg list-disc;
+.tdoc ul,
+.tdoc ol {
+  @apply pb-2 list-disc;
 }
 
 .tdoc ul li::marker {
@@ -101,8 +102,7 @@
 }
 
 .tdoc ol {
-  @apply py-6 text-lg;
-  list-style: circle;
+  list-style: lower-roman;
 }
 
 .tdoc div [class*="language-"] {

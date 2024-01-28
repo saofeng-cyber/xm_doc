@@ -7,11 +7,11 @@ export default defineConfig({
   description: "Hope you have a good day 🎉🎉🎉",
   base: '/xm_doc/',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/xm_doc/header.jpeg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/xm_doc/head.jpeg' }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/top.jpg',
+    logo: '/head.jpeg',
     nav: [
       { text: '首页', link: '/' },
       {
