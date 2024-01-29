@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { useData, withBase, onContentUpdated } from 'vitepress'
-import { ref } from 'vue';
-const { frontmatter } = useData();
-const { hero } = frontmatter.value;
-const name = ref(hero.name);
-const actions = ref(hero.actions);
-const whiteName = () => {
-    let index = 0;
-    function readName() {
-        setTimeout(() => {
-            name.value = (hero.name as string).slice(0, index) + "_"
-            index += 1;
-            if (index >= hero.name.length + 1) {
-                index = 0;
-            }
-            readName();
-        }, 250);
-    }
-    readName();
-}
+// import { useData, withBase, onContentUpdated } from 'vitepress'
+// import { ref } from 'vue';
+// const { frontmatter } = useData();
+// const { hero } = frontmatter.value;
+// const name = ref(hero.name);
+// const actions = ref(hero.actions);
+// const whiteName = () => {
+//     let index = 0;
+//     function readName() {
+//         setTimeout(() => {
+//             name.value = (hero.name as string).slice(0, index) + "_"
+//             index += 1;
+//             if (index >= hero.name.length + 1) {
+//                 index = 0;
+//             }
+//             readName();
+//         }, 250);
+//     }
+//     readName();
+// }
 
-onContentUpdated(whiteName)
+// onContentUpdated(whiteName)
 
 
 </script>
@@ -28,7 +28,7 @@ onContentUpdated(whiteName)
     <div id="app_home" class="relative h-full px-4 pb-10 duration-300 ease-in-out text-white">
         <slot name="home-hero-before" />
         <!-- hero -->
-        <div class="container mx-auto flex items-center justify-center flex-col lg:flex-row space-x-4">
+        <!-- <div class="container mx-auto flex items-center justify-center flex-col lg:flex-row space-x-4">
             <div class="text-center">
                 <h1 class="heroName text-4xl font-bold tracking-tigh sm:text-5xl">{{ name }}
                 </h1>
@@ -39,7 +39,7 @@ onContentUpdated(whiteName)
                         {{ item.text }}</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <slot name="home-hero-after" />
         <!-- feature -->
         <!-- <slot name="home-features-before" />

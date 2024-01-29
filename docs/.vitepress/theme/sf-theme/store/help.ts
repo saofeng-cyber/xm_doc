@@ -1,4 +1,4 @@
-import { localCache } from '../hook/useLocalStorage'
+import { localCache } from '../hooks/useLocalStorage'
 export interface themeType {
     theme: 'light' | 'dark';
 }
