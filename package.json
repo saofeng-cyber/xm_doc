@@ -34,6 +34,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
     "@giscus/vue": "^2.4.0",
+    "axios": "^1.6.7",
     "pinia": "^2.1.7",
     "vitepress-markdown-timeline": "^1.2.1",
     "vue": "^3.4.13"

@@ -1,5 +1,4 @@
-import { ref } from "vue";
-
+import axios from "axios";
 export interface OneData {
     id: number,
     uuid: string,
@@ -11,14 +10,11 @@ export interface OneData {
     created_at: string,
     length: number
 }
-export const getOne =  async () => {
-    const oneData = ref<OneData>()
-    await getOne();
-    async function getOne() {
-        const url = new Request("https://v1.hitokoto.cn/?c=j");
-        const data = await fetch(url);
-        const json = await data.json() as OneData;
-        oneData.value = json;
-    }
-    return { oneData, getOne };
+export const getOne = async () => {
+    return new Promise(async (resolve, reject) => {
+        const res: any = await axios.get("https://v1.hitokoto.cn/?c=j");
+        const json: OneData = res.data;
+        resolve(json);
+    })
+
 }
