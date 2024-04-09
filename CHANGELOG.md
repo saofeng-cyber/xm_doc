@@ -71,14 +71,16 @@
 
 
 
-## Unreleased (2024-04-09)
+## <small>1.2.1 (2024-04-09)</small>
 
+* 1.2.1 ([931208f](https://github.com/saofeng-cyber/xm_doc/commit/931208f))
 * 添加博客内容 ([4602101](https://github.com/saofeng-cyber/xm_doc/commit/4602101))
 * 添加类操作 ([0b4f7c5](https://github.com/saofeng-cyber/xm_doc/commit/0b4f7c5))
 * 添加js ([9720092](https://github.com/saofeng-cyber/xm_doc/commit/9720092))
 * 添加js ([44db095](https://github.com/saofeng-cyber/xm_doc/commit/44db095))
 * 添加js函数知识 ([511ec49](https://github.com/saofeng-cyber/xm_doc/commit/511ec49))
 * 修改布局 ([621d02d](https://github.com/saofeng-cyber/xm_doc/commit/621d02d))
+* 修改日志 ([9f7c8d7](https://github.com/saofeng-cyber/xm_doc/commit/9f7c8d7))
 * 修改首页 ([73de1c1](https://github.com/saofeng-cyber/xm_doc/commit/73de1c1))
 * 修改首页一言 ([84864f5](https://github.com/saofeng-cyber/xm_doc/commit/84864f5))
 * 修改markdown样式 ([7413266](https://github.com/saofeng-cyber/xm_doc/commit/7413266))
@@ -90,6 +92,11 @@
 * 修改markdown样式 ([aebcb0d](https://github.com/saofeng-cyber/xm_doc/commit/aebcb0d))
 * 修改markdown样式 ([c46ab09](https://github.com/saofeng-cyber/xm_doc/commit/c46ab09))
 * 修改markdown样式 ([c0aa12d](https://github.com/saofeng-cyber/xm_doc/commit/c0aa12d))
+
+
+
+## Unreleased (2024-04-09)
+
 
 
 

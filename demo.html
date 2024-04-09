@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        /* background: url("https://assets.codepen.io/3364143/7btrrd.mp4") no-repeat center center fixed; */
+        overflow: hidden;
+    }
+</style>
+
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector("canvas");
+
+        const ctx = canvas.getContext("2d");
+
+        const width = (canvas.width = window.innerWidth);
+        const height = (canvas.height = window.innerHeight);
+
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        function randomColor() {
+            return `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`
+        }
+
+        function Ball(x, y, velX, velY, color, size) {
+            this.x = x;
+            this.y = y;
+            this.velX = velX;
+            this.velY = velY;
+            this.color = color;
+            this.size = size;
+        }
+
+        Ball.prototype.draw = function () {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+            ctx.font = `${52}px Arial`;
+            // ctx.fillText("洵默大傻逼", this.x, this.y)
+            ctx.fill();
+        }
+
+        Ball.prototype.update = function () {
+            if (this.x + this.size >= width) {
+                this.velX = -this.velX;
+            }
+
+            if (this.x - this.size <= 0) {
+                this.velX = -this.velX;
+            }
+
+            if (this.y + this.size >= height) {
+                this.velY = -this.velY;
+            }
+
+            if (this.y - this.size <= 0) {
+                this.velY = -this.velY;
+            }
+            if (this.velX === 0) this.velX = random(-4, 2);
+            if (this.velY === 0) this.velY = random(-4, 2);
+
+            this.x += this.velX;
+            this.y += this.velY;
+        };
+
+
+        let balls = [];
+
+        while (balls.length < 25) {
+            let size = random(10, 20);
+            let ball = new Ball(
+                // 为避免绘制错误，球至少离画布边缘球本身一倍宽度的距离
+                random(0 + size, width - size),
+                random(0 + size, height - size),
+                random(-2, 2),
+                random(-2, 2),
+                randomColor(),
+                size,
+            );
+            balls.push(ball);
+            console.log(balls);
+        }
+
+        function loop() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+            ctx.fillRect(0, 0, width, height);
+
+            for (let i = 0; i < balls.length; i++) {
+                balls[i].draw();
+                balls[i].update();
+            }
+
+            requestAnimationFrame(loop);
+        }
+
+        loop()
+
+    </script>
+</body>
+
+</html>
