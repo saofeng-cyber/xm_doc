@@ -1,29 +1,29 @@
-import { xmThemeConfig } from './theme/sf-theme/config/index';
-import { defineConfig } from 'vitepress';
+import { xmThemeConfig } from "./theme/sf-theme/config/index";
+import { defineConfig } from "vitepress";
 import timeline from "vitepress-markdown-timeline";
-import markdownItContainer from "markdown-it-container"
+import markdownItContainer from "markdown-it-container";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "洵默の小窝",
   description: "Hope you have a good day 🎉🎉🎉",
-  base: '/xm_doc/',
+  base: "/xm_doc/",
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/xm_doc/head.jpeg' }]
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/xm_doc/head.jpeg" }],
   ],
   themeConfig: xmThemeConfig,
   cleanUrls: true,
   markdown: {
-    theme: 'github-dark',
+    theme: "github-dark",
     lineNumbers: true,
     image: {
       // 默认禁用图片懒加载
-      lazyLoading: true
+      lazyLoading: true,
     },
     linkify: true,
     typographer: true,
     config(md) {
-      md.use(timeline).use(markdownItContainer)
-    }
+      md.use(timeline).use(markdownItContainer);
+    },
   },
   lastUpdated: true,
   vite: {
@@ -32,5 +32,5 @@ export default defineConfig({
       host: true,
       port: 8082,
     },
-  }
-})
+  },
+});

@@ -25,7 +25,7 @@ export const xmThemeConfig = {
         },
         { text: "Vue", link: '/web/vue/' },
         { text: "Browser", link: '/web/browser/' },
-        { text: 'Ai', link: '/ai/' },
+        { text: '工程化', link: '/engine/' },
         { text: '个人简介', link: '/guide/mySelf' },
         { text: '我的简历', link: '/guide/myResume' },
     ],
