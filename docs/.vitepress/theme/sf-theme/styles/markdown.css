@@ -1,8 +1,8 @@
 .tdoc .header-anchor {
   position: absolute;
-  top: -0.16em;
+  top: 0;
   left: 0;
-  margin-left: -1.48em;
+  margin-left: -0.82em;
   font-weight: 500;
   user-select: none;
   opacity: 0;
@@ -11,7 +11,7 @@
 }
 
 .tdoc .header-anchor::before {
-  content: "🐅";
+  content: "#";
 }
 
 .tdoc h1,
@@ -23,7 +23,7 @@
   position: relative;
   font-weight: 700;
   outline: none;
-  margin: 20px 0 14px;
+  margin: 24px 0;
   color: #39c5bb;
 }
 
@@ -40,6 +40,23 @@
 .tdoc h6:hover .header-anchor,
 .tdoc h6 .header-anchor:focus {
   opacity: 1;
+}
+
+.tdoc h2 {
+  display: block;
+  border-bottom: 4px solid #4dd0e1;
+}
+
+.tdoc h2::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 50vw;
+  height: 10px;
+  border-top-right-radius: 24px;
+  background: linear-gradient(90deg, transparent, #4dd0e1);
 }
 
 .has-sidebar {
@@ -81,7 +98,7 @@
 }
 
 .tdoc p code {
-  @apply bg-[#f2f1f1] p-[2px] rounded-sm;
+  @apply bg-[#4dd0e114] p-[2px] rounded-sm text-[#39C5BB];
 }
 
 .tdoc ul,
