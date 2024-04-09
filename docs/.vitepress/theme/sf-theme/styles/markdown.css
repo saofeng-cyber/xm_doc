@@ -201,3 +201,18 @@
 .tdoc .custom-block-title {
   display: none;
 }
+.tdoc table {
+  @apply m-1 w-full;
+  border-collapse: collapse;
+  border-radius: 10px;
+  background-color: var(--tdoc-bg-color);
+  color: var(--tdoc-text-color);
+  overflow: hidden;
+}
+
+.tdoc table th {
+  @apply bg-[#39C5BB] px-4 py-3 text-left text-white border;
+}
+.tdoc table td {
+  @apply px-4 py-2 border;
+}

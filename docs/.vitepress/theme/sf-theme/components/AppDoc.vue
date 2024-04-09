@@ -28,7 +28,7 @@ const BackUp = defineClientComponent(() => {
                     </div>
                 </article>
                 <!-- </article> -->
-                <div class="relative text-slate-800 flex-shrink-0 order-2 hidden xl:flex flex-col min-w-[360px] pl-8">
+                <div class="relative text-slate-800 flex-shrink-0 order-2 hidden xl:flex flex-col max-w-[360px] pl-8">
                     <UserInfo />
                     <Outline />
                 </div>

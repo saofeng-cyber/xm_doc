@@ -1,19 +1,33 @@
 export const xmThemeConfig = {
 
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/header.jpeg',
+    logo: '/head.jpeg',
     nav: [
         { text: '首页', link: '/' },
         {
             text: '前端',
             items: [
                 { text: '前端技术路线', link: '/web/' },
-                { text: 'javascript', link: '/web/javascript' }
+                { text: 'Html5', link: '/web/html/' },
+                { text: 'Css3', link: '/web/css/' },
+                { text: 'Vue3', link: '/web/vue/' },
+                { text: '网页适配', link: '/web/adapter/' },
             ]
         },
-        { text: '示例', link: '/guide/markdown-examples' },
-        { text: 'Api示例', link: '/guide/api-examples' },
-        { text: '个人简介', link: '/guide/my-self' },
+        {
+            text: 'Js',
+            items: [
+                { text: '基础', link: '/web/js/' },
+                { text: '常用高效工具', link: '/web/js/jsTools' },
+                { text: '一些小案例', link: '/web/js/jsDemo' },
+                { text: '代码整洁之道', link: '/web/js/jsClean' },
+            ]
+        },
+        { text: "Vue", link: '/web/vue/' },
+        { text: "Browser", link: '/web/browser/' },
+        { text: 'Ai', link: '/ai/' },
+        { text: '个人简介', link: '/guide/mySelf' },
+        { text: '我的简历', link: '/guide/myResume' },
     ],
 
     outline: {
@@ -45,16 +59,16 @@ export const xmThemeConfig = {
                 svg: 'github'
             }, link: 'https://github.com/saofeng-cyber', ariaLabel: 'Github'
         },
-        {
-            icon: {
-                svg: 'qq',
-            }, link: 'https://res.abeim.cn/api/qq/?qq=942391953', ariaLabel: 'QQ'
-        },
-        {
-            icon: {
-                svg: 'weixin',
-            }, link: 'https://github.com/vuejs/vitepress', ariaLabel: 'WX'
-        },
+        // {
+        //     icon: {
+        //         svg: 'qq',
+        //     }, link: 'https://res.abeim.cn/api/qq/?qq=942391953', ariaLabel: 'QQ'
+        // },
+        // {
+        //     icon: {
+        //         svg: 'weixin',
+        //     }, link: 'https://github.com/vuejs/vitepress', ariaLabel: 'WX'
+        // },
     ],
     footer: {
         message: 'Released under the MIT License.',
@@ -65,4 +79,4 @@ export const xmThemeConfig = {
         text: 'Edit this page on GitHub'
     },
 
-}
+} as any;
