@@ -10,14 +10,6 @@ css 标准盒子模型
 
 css 盒子模型 又称为框模型（Box Model），包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素。
 
-标准盒子模型：
-
-![标准盒子模型](./images/box-model.png)
-
-IE 盒子模型：
-
-![IE 盒子模型](./images/box-model-ie.png)
-
 ### 区别
 
 标准盒子模型和 IE 盒子模型的区别主要体现在 width 和 height 属性上。
