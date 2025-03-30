@@ -17,6 +17,8 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  PNPM_VERSION: 7.0.0 # 指定 pnpm 版本
 # 只允许同时进行一次部署，跳过正在运行和最新队列之间的运行队列
 # 但是，不要取消正在进行的运行，因为我们希望允许这些生产部署完成
 concurrency:
@@ -39,6 +41,8 @@ jobs:
         with:
           node-version: 20
           cache: pnpm # 或 pnpm / yarn
+      - name: Install pnpm
+        run: npm install -g pnpm@${{ env.PNPM_VERSION }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies

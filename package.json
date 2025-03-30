@@ -38,6 +38,5 @@
     "pinia": "^2.1.7",
     "vitepress-markdown-timeline": "^1.2.1",
     "vue": "^3.4.21"
-  },
-  "packageManager": "pnpm@8.0.0"
+  }
 }
