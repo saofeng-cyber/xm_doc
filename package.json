@@ -39,7 +39,5 @@
     "vitepress-markdown-timeline": "^1.2.1",
     "vue": "^3.4.21"
   },
-  "engines": {
-    "pnpm": ">=8.0.0"
-  }
+  "packageManager": "pnpm@8.0.0"
 }
