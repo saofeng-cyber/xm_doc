@@ -4,7 +4,7 @@ import timeline from "vitepress-markdown-timeline";
 import markdownItContainer from "markdown-it-container";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "洵默の小窝",
+  title: "孙明刚の小窝",
   description: "Hope you have a good day 🎉🎉🎉",
   base: "/xm_doc/",
   head: [

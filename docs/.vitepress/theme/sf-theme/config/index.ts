@@ -50,6 +50,8 @@ export const xmThemeConfig = {
       items: [
         { text: "about", link: "/guide/mySelf" },
         { text: "myResume", link: "/guide/myResume" },
+        { text: "chat", link: "/guide/chat" },
+        { text: "video", link: "/guide/video" },
       ],
     },
   ],
@@ -98,7 +100,7 @@ export const xmThemeConfig = {
   ],
   footer: {
     message: "Released under the MIT License.",
-    copyright: 'Copyright © 2024-present <a href="#">洵默の小窝</a>',
+    copyright: 'Copyright © 2024-present <a href="#">孙明刚の小窝</a>',
   },
   editLink: {
     pattern: "https://github.com/vsaofeng-cyber/xm_doc/edit/main/docs/:path",

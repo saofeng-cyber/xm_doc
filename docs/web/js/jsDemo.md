@@ -93,7 +93,7 @@ for (let i = 0; i < newArr.length; i++) {
         ctx.fillStyle = this.color;
         // ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
         ctx.font = `${52}px Arial`;
-        ctx.fillText("洵默大傻逼", this.x, this.y);
+        ctx.fillText("孙明刚大傻逼", this.x, this.y);
         ctx.fill();
       };
 

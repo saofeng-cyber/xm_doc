@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: 洵默の小窝
+  name: 孙明刚の小窝
   text: 我如同永不老去的时光，奔腾不停，只渴望在某一天能找到属于自己的辉煌，如同蜗牛终将爬上金字塔的塔顶，欣赏大地第一缕阳光，沐浴人间第一丝温暖
   tagline: My great project tagline
   actions:
