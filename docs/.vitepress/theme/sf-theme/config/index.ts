@@ -71,7 +71,7 @@ export const xmThemeConfig = {
   externalLinkIcon: true,
   notFound: {
     title: "您来到了一片荒芜之地",
-    quote: "—— 谁料在这片荒芜之地，有如此多的人, 如此多的故事",
+    quote: "—— 谁料在这片荒芜之地，有如此多的人, 如此多的故事__风风__的",
     linkLabel: "返回首页",
     linkText: "返回首页",
     code: "404",
